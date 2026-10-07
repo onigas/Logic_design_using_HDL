@@ -4,6 +4,55 @@ Laboratory materials for the **Logic Design using HDL** course at the University
 
 The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board and **AMD/Xilinx Vivado 2022.2**. The repository contains source files, constraints, simulation testbenches where required, memory initialization data, and Tcl scripts that recreate the Vivado projects from source.
 
+## Laboratories
+
+### Lab 04 — FPGA memories
+
+| Project | Topic |
+| --- | --- |
+| [L4.1_hdl_rom](Lab04/L4.1_hdl_rom/) | An 8 × 8 ROM described in HDL, with output on LEDs |
+| [L4.2_distributed_rom](Lab04/L4.2_distributed_rom/) | A 16 × 8 ROM using Distributed Memory Generator |
+| [L4.3_block_rom](Lab04/L4.3_block_rom/) | An 8 × 16 Block ROM with hexadecimal seven-segment display |
+
+### Lab 05 — Arithmetic Logic Unit
+
+| Project | Topic |
+| --- | --- |
+| [L5.1_alu_leds](Lab05/L5.1_alu_leds/) | Four-bit ALU with results displayed on LEDs |
+| [L5.2_alu_display](Lab05/L5.2_alu_display/) | Four-bit ALU with hexadecimal seven-segment display |
+| [L5.3_memory_alu](Lab05/L5.3_memory_alu/) | Two ROM reads, four-bit addition, and hexadecimal display |
+
+### Lab 06 — VGA controller
+
+| Project | Topic |
+| --- | --- |
+| [L6.1_stripes_1024x768](Lab06/L6.1_stripes_1024x768/) | VGA timing and alternating red/green horizontal stripes |
+| [L6.2_letters_1024x768](Lab06/L6.2_letters_1024x768/) | Character bitmap from ROM, positioned using switches |
+
+### Lab 07 — VGA sprites and animation
+
+| Project | Topic |
+| --- | --- |
+| [L7_1_sprite_block_rom_1024x768](Lab07/L7_1_sprite_block_rom_1024x768/) | Display a 240 × 160 image from Block ROM at a selectable position |
+| [L7_2_screen_saver_1024x768](Lab07/L7_2_screen_saver_1024x768/) | Animated sprite that bounces at the screen boundaries |
+
+### Lab 08 — UART serial communication
+
+| Project | Topic |
+| --- | --- |
+| [L8.1_TX](Lab08/L8.1_TX/) | Transmit switch data over UART |
+| [L8.2_RX](Lab08/L8.2_RX/) | Receive UART bytes and display the received value |
+| [L8.3_Echo](Lab08/L8.3_Echo/) | Receive a UART byte and transmit it back |
+
+### Lab 09 — Pulse Width Modulation
+
+| Project | Topic |
+| --- | --- |
+| [L9.1_PWM_LED](Lab09/L9.1_PWM_LED/) | LED brightness control with PWM and behavioral simulation |
+| [L9.2_DC_Motor](Lab09/L9.2_DC_Motor/) | DC motor speed and direction control using Pmod DHB1 |
+| [L9.3_Knight_Rider](Lab09/L9.3_Knight_Rider/) | Knight Rider LED animation with PWM brightness control |
+| [L9.4_PWM_Audio](Lab09/L9.4_PWM_Audio/) | Sine-wave audio generation using ROM and PWM |
+
 ## Repository structure
 
 ```text
@@ -27,17 +76,6 @@ Logic_design_using_HDL/
 ├── .gitignore
 └── README.md
 ```
-
-## Laboratories
-
-| Laboratory | Topic | Main exercises |
-| --- | --- | --- |
-| [Lab04](Lab04/) | FPGA memories | HDL ROM, Distributed ROM, Block ROM |
-| [Lab05](Lab05/) | Arithmetic Logic Unit | ALU with LEDs, seven-segment display, memory + ALU |
-| [Lab06](Lab06/) | VGA controller | 1024x768 timing, color stripes, character sprite from PROM |
-| [Lab07](Lab07/) | VGA sprites and animation | Image ROM, sprite display, screen-saver animation |
-| [Lab08](Lab08/) | UART serial communication | Transmitter, receiver, raw-byte echo |
-| [Lab09](Lab09/) | Pulse Width Modulation | LED brightness and simulation, DC motor control, Knight Rider LED effect, PWM audio |
 
 ## Recreating a Vivado project
 
