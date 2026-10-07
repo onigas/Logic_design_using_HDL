@@ -27,6 +27,12 @@ Logic_design_using_HDL/
 │   ├── L7_1_sprite_block_rom_1024x768/
 │   ├── L7_2_screen_saver_1024x768/
 │   └── README.md
+├── Lab08/
+│   ├── L8.1_TX/
+│   ├── L8.2_RX/
+│   ├── L8.3_Echo/
+│   ├── create_all_projects.tcl
+│   └── README.md
 ├── .gitignore
 └── README.md
 ```
@@ -39,6 +45,7 @@ Logic_design_using_HDL/
 | [Lab05](Lab05/) | Arithmetic Logic Unit | ALU with LEDs, seven-segment display, memory + ALU |
 | [Lab06](Lab06/) | VGA controller | 1024x768 timing, color stripes, character sprite from PROM |
 | [Lab07](Lab07/) | VGA sprites and animation | Image ROM, sprite display, screen-saver animation |
+| [Lab08](Lab08/) | UART serial communication | Transmitter, receiver, raw-byte echo |
 
 ## Recreating a Vivado project
 
@@ -51,7 +58,7 @@ cd <path-to-the-exercise-folder>
 source create_project.tcl
 ```
 
-The script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module.
+For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Lab08 creates its projects under each exercise's `build/` directory and provides a `build_bitstream.tcl` script. Lab08 contains no simulation tasks; its UART RTL follows the original laboratory architecture.
 
 You can also run a script from a terminal where Vivado is available in `PATH`, for example:
 
@@ -70,4 +77,4 @@ vivado -mode batch -source create_project.tcl
 
 ## Repository policy
 
-Only source material required to reproduce the exercises is version-controlled. Generated Vivado files such as `.Xil/`, `vivado_project/`, run directories, logs, journals, bitstreams, and cached IP products are intentionally excluded.
+Only source material required to reproduce the exercises is version-controlled. Generated Vivado files such as `.Xil/`, `vivado_project/`, `build/`, run directories, logs, journals, bitstreams, and cached IP products are intentionally excluded.
