@@ -2,35 +2,25 @@
 
 Laboratory materials for the **Logic Design using HDL** course at the University of Debrecen, Faculty of Informatics.
 
-The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board and **AMD/Xilinx Vivado 2022.2**. The repository contains source files, constraints, simulation testbenches, memory initialization data, and Tcl scripts that recreate the Vivado projects from source.
+The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board and **AMD/Xilinx Vivado 2022.2**. The repository contains source files, constraints, simulation testbenches where required, memory initialization data, and Tcl scripts that recreate the Vivado projects from source.
 
 ## Repository structure
 
 ```text
 Logic_design_using_HDL/
 ├── Lab04/
-│   ├── L4.1_hdl_rom/
-│   ├── L4.2_distributed_rom/
-│   ├── L4.3_block_rom/
-│   ├── tools/
-│   └── README.md
 ├── Lab05/
-│   ├── L5.1_alu_leds/
-│   ├── L5.2_alu_display/
-│   ├── L5.3_memory_alu/
-│   └── README.md
 ├── Lab06/
-│   ├── L6.1_stripes_1024x768/
-│   ├── L6.2_letters_1024x768/
-│   └── README.md
 ├── Lab07/
-│   ├── L7_1_sprite_block_rom_1024x768/
-│   ├── L7_2_screen_saver_1024x768/
-│   └── README.md
 ├── Lab08/
 │   ├── L8.1_TX/
 │   ├── L8.2_RX/
 │   ├── L8.3_Echo/
+│   └── README.md
+├── Lab09/
+│   ├── L9.1_PWM_LED/
+│   ├── L9.2_DC_Motor/
+│   ├── L9.3_Knight_Rider/
 │   ├── create_all_projects.tcl
 │   └── README.md
 ├── .gitignore
@@ -46,6 +36,7 @@ Logic_design_using_HDL/
 | [Lab06](Lab06/) | VGA controller | 1024x768 timing, color stripes, character sprite from PROM |
 | [Lab07](Lab07/) | VGA sprites and animation | Image ROM, sprite display, screen-saver animation |
 | [Lab08](Lab08/) | UART serial communication | Transmitter, receiver, raw-byte echo |
+| [Lab09](Lab09/) | Pulse Width Modulation | LED brightness, DC motor control, Knight Rider LED effect |
 
 ## Recreating a Vivado project
 
@@ -58,7 +49,7 @@ cd <path-to-the-exercise-folder>
 source create_project.tcl
 ```
 
-For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Lab08 creates its projects under each exercise's `build/` directory and provides a `build_bitstream.tcl` script. Lab08 contains no simulation tasks; its UART RTL follows the original laboratory architecture.
+For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Labs 08-09 create their projects under each exercise's `build/` directory and provide `build_bitstream.tcl` scripts. Labs 08-09 contain no simulation tasks.
 
 You can also run a script from a terminal where Vivado is available in `PATH`, for example:
 
