@@ -54,7 +54,7 @@ and saturation at full duty. It finishes after approximately 5 ms and prints
 - L9.1 uses **SW[7:0]** to set PWM duty and **LED0** as the PWM output.
 - L9.2 uses **SW[7:0]** for motor speed, **SW15** for motor 1 direction,
   **SW14** for motor 2 direction, and the **JA** Pmod header for the DHB1.
-- L9.3 uses **LED[7:0]**, **SW0/SW1**, and BTNC.
+- L9.3 uses **LED[7:0]**, **SW0** for run/pause, **SW1** for fast/slow fading, and BTNC.
 - L9.4 uses **SW[8:0]** to select the sine-wave frequency and the board's
   **3.5 mm audio output (J8)**. Start with decimal `SW=97` for approximately
   1 kHz. Increasing SW lowers the pitch. No external Pmod is needed.

@@ -71,7 +71,7 @@ On slide 16, "the previous lab" is better written as "the previous exercise
 - L9.1-L9.3: 17-bit PWM counter with period `99999` for a 1 kHz PWM period.
 - Comparison using `count[16:9]` and an 8-bit duty value.
 - Existing asynchronous reset style in the PWM modules.
-- Original Knight Rider timing constants and state behavior.
+- Original Knight Rider movement/state behavior. The two fade-delay constants are intentionally adjusted so SW1 has a clearly visible effect.
 
 The 8-bit comparison is intentionally retained. Because the PWM period is
 100000 clock cycles while `count[16:9]` has 512-count steps, values at the
@@ -112,3 +112,15 @@ SW values can yield ultrasonic or aliased output, as in the original code.
 
 Vivado 2022.2/XSim, synthesis, implementation, bitstream generation, and
 on-board operation have not been run in the preparation environment.
+
+
+## L9.3 SW1 fade-speed adjustment
+
+The original values (`delay1=19512`, `delay2=15512`) make the two SW1 modes visually very similar. The packaged source therefore changes only these two constants:
+
+```verilog
+parameter [14:0] delay1=15'd7_999;   // SW1=1: fast fade
+parameter [14:0] delay2=15'd29_999;  // SW1=0: slow fade
+```
+
+At 100 MHz, the resulting approximate full fade times are **20.4 ms** for SW1=1 and **114.6 ms** for SW1=0. The Knight Rider position interval (`speed`) remains approximately **20.97 ms**, so SW1 now changes the visible trail length clearly without restructuring the design.

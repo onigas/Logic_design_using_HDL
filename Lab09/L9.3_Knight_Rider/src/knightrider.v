@@ -8,8 +8,8 @@ module knightrider(
     );
 
 parameter [20:0] speed=21'd2_097_100;
-parameter [14:0] delay1=15'd19_512;
-parameter [14:0] delay2=15'd15_512;
+parameter [14:0] delay1=15'd7_999;
+parameter [14:0] delay2=15'd29_999;
 parameter [7:0] limit=8'd128;
 
 wire inc = 1'b0;
