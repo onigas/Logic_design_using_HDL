@@ -6,7 +6,8 @@ set project_file [file join $project_dir "${project_name}.xpr"]
 
 set rtl_files [list [file join $lab_dir src pwm_led.v]]
 set xdc_file [file join $lab_dir constraints Nexys4DDR_PWM_LED.xdc]
-foreach required_file [concat $rtl_files [list $xdc_file]] {
+set sim_file [file join $lab_dir sim pwmsim.sv]
+foreach required_file [concat $rtl_files [list $xdc_file $sim_file]] {
     if {![file isfile $required_file]} { error "Required file is missing: $required_file" }
 }
 if {[llength [get_projects -quiet]] > 0} {
@@ -29,3 +30,11 @@ if {[llength [get_projects -quiet]] > 0} {
     update_compile_order -fileset sources_1
     puts "Created project: $project_file"
 }
+
+# Also update previously generated L9.1 projects with the simulation source.
+if {[lsearch -exact [get_files -quiet -of_objects [get_filesets sim_1]] $sim_file] < 0} {
+    add_files -norecurse -fileset sim_1 [list $sim_file]
+}
+set_property top pwmsim [get_filesets sim_1]
+set_property xsim.simulate.runtime {6ms} [get_filesets sim_1]
+update_compile_order -fileset sim_1

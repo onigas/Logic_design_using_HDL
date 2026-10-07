@@ -21,6 +21,7 @@ Logic_design_using_HDL/
 │   ├── L9.1_PWM_LED/
 │   ├── L9.2_DC_Motor/
 │   ├── L9.3_Knight_Rider/
+│   ├── L9.4_PWM_Audio/
 │   ├── create_all_projects.tcl
 │   └── README.md
 ├── .gitignore
@@ -36,7 +37,7 @@ Logic_design_using_HDL/
 | [Lab06](Lab06/) | VGA controller | 1024x768 timing, color stripes, character sprite from PROM |
 | [Lab07](Lab07/) | VGA sprites and animation | Image ROM, sprite display, screen-saver animation |
 | [Lab08](Lab08/) | UART serial communication | Transmitter, receiver, raw-byte echo |
-| [Lab09](Lab09/) | Pulse Width Modulation | LED brightness, DC motor control, Knight Rider LED effect |
+| [Lab09](Lab09/) | Pulse Width Modulation | LED brightness and simulation, DC motor control, Knight Rider LED effect, PWM audio |
 
 ## Recreating a Vivado project
 
@@ -49,7 +50,7 @@ cd <path-to-the-exercise-folder>
 source create_project.tcl
 ```
 
-For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Labs 08-09 create their projects under each exercise's `build/` directory and provide `build_bitstream.tcl` scripts. Labs 08-09 contain no simulation tasks.
+For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Labs 08-09 create their projects under each exercise's `build/` directory and provide `build_bitstream.tcl` scripts. Lab08 contains no simulation tasks. Lab09 includes a behavioral simulation and `run_simulation.tcl` for L9.1; L9.4 recreates its sine-wave ROM IP from the supplied initialization data.
 
 You can also run a script from a terminal where Vivado is available in `PATH`, for example:
 
@@ -62,7 +63,7 @@ vivado -mode batch -source create_project.tcl
 - Nexys4 DDR / Nexys A7-100T
 - FPGA: XC7A100T-1CSG324C
 - Vivado 2022.2
-- Verilog/SystemVerilog
+- Verilog/SystemVerilog and VHDL
 
 > Check the FPGA device fitted to the physical board before generating a bitstream. The supplied Tcl scripts use `xc7a100tcsg324-1`.
 
