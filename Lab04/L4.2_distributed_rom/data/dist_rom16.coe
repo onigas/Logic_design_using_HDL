@@ -1,0 +1,7 @@
+; 16 addresses, one 8-bit word at each address.
+memory_initialization_radix = 16;
+memory_initialization_vector =
+00 C8 F9 AF
+64 95 6C D4
+39 E7 5A 96
+84 37 28 4C;

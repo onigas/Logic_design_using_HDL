@@ -1,0 +1,30 @@
+# Vivado generated projects and caches
+**/vivado_project/
+**/.Xil/
+**/.cache/
+**/.hw/
+**/.ip_user_files/
+**/*.runs/
+**/*.sim/
+**/*.srcs/
+**/*.gen/
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.pb
+*.xpr
+*.bit
+*.bin
+*.ltx
+*.dcp
+*.wdb
+*.vcd
+*.xsa
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
