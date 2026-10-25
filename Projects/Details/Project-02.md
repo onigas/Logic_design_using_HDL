@@ -1,6 +1,6 @@
 # Project 02 — Digital Alarm Clock with UART Interface
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -59,8 +59,8 @@ All commands should be terminated by Enter (CR, LF, or CRLF, as documented). Inv
 
 ## Reference Projects
 
-- [Course Lab 08 — UART TX, RX, Echo](../Lab08/)
-- [Course Lab 09 — PWM Audio](../Lab09/L9.4_PWM_Audio/)
+- [Course Lab 08 — UART TX, RX, Echo](../../Lab08/)
+- [Course Lab 09 — PWM Audio](../../Lab09/L9.4_PWM_Audio/)
 - [Verilog Digital Clock — Nexys4DDR](https://github.com/nnyilun/VerilogDigitalClock)
 - [FPGA Digital Alarm Clock with Stopwatch and UART](https://github.com/ft-rohan/fpga-digital-alarm-clock-verilog)
 - [Digilent Nexys 4 DDR Out-of-Box Demo](https://github.com/Digilent/Nexys-4-DDR-OOB)
@@ -72,4 +72,4 @@ Demonstrate UART configuration of both **current time and alarm settings**, corr
 
 The time is not retained across power loss without additional hardware.
 
-See the [general project guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines) and [evaluation criteria](../../README.md#evaluation-criteria).
