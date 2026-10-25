@@ -5,25 +5,25 @@
 **Development environment:** Vivado 2022.2  
 **Suggested duration:** 4–5 weeks
 
-Select a project title to open its individual assignment page. Project details and grade-specific requirements will be developed progressively. Maximum grades are on a **1–5 scale**; they are not percentages.
+The 12 proposals below are independent projects. Click a title to open its assignment. Maximum grades use a **1–5 scale**. Assignments may use and adapt existing open-source HDL implementations.
 
-| ID | Project | Topic | Proposed maximum grades |
-| --- | --- | --- | --- |
-| HDL-01 | [Digital Clock and Alarm System](HDL-01.md) | Digital timekeeping, 12/24-hour formats, adjustable alarms, optional UART and VGA output | 3 / 4 / 5 |
-| HDL-02 | [Multichannel PWM Generator](HDL-02.md) | Configurable PWM channels and RGB LED control | 3 / 4 / 5 |
-| HDL-03 | [Intelligent Traffic Light Controller](HDL-03.md) | Finite-state-machine traffic control and pedestrian requests | 3 / 4 / 5 |
-| HDL-05 | [SPI Interface for the ADXL362 Accelerometer](HDL-05.md) | SPI sensor configuration and three-axis acceleration acquisition | 3 / 4 / 5 |
-| HDL-07 | [VGA Graphics Generator](HDL-07.md) | Video synchronization, shapes, text, and animation | 3 / 4 / 5 |
-| HDL-08 | [FPGA-Based Pong / Space Invaders Game](HDL-08.md) | Hardware-only arcade game with VGA graphics and controls | 3 / 4 / 5 |
-| HDL-09 | [FPGA-Based Digital Logic Analyzer](HDL-09.md) | Digital acquisition, triggering, BRAM buffering, and UART export | 3 / 4 / 5 |
-| HDL-11 | [FPGA-Based FIR Digital Filter](HDL-11.md) | Fixed-point FIR filtering with FPGA DSP resources | 3 / 4 / 5 |
-| HDL-13 | [PWM Audio Signal Processor](HDL-13.md) | Audio signal generation and PWM output | 3 / 4 / 5 |
-| HDL-14 | [Digital Security System with Access Code](HDL-14.md) | FSM-based access code checking, lockout, and alarms | 3 / 4 / 5 |
+| No. | Project title | Maximum grade |
+| ---: | --- | --- |
+| 1 | [Digital Clock with Seven-Segment Display](Project-01.md) | 3/5 |
+| 2 | [Digital Alarm Clock with UART Interface](Project-02.md) | 4/5 |
+| 3 | [Advanced Digital Clock with VGA Display and Multiple Alarms](Project-03.md) | 5/5 |
+| 4 | [Multichannel PWM Generator](Project-04.md) | To be specified |
+| 5 | [Intelligent Traffic Light Controller](Project-05.md) | To be specified |
+| 6 | [SPI Interface for the ADXL362 Accelerometer](Project-06.md) | To be specified |
+| 7 | [VGA Graphics Generator](Project-07.md) | To be specified |
+| 8 | [FPGA-Based Pong / Space Invaders Game](Project-08.md) | To be specified |
+| 9 | [FPGA-Based Digital Logic Analyzer](Project-09.md) | To be specified |
+| 10 | [FPGA-Based FIR Digital Filter](Project-10.md) | To be specified |
+| 11 | [PWM Audio Signal Processor](Project-11.md) | To be specified |
+| 12 | [Digital Security System with Access Code](Project-12.md) | To be specified |
 
-## Project expectations
+## Important notes
 
-Students may reproduce and adapt existing open-source projects. They must be able to explain the design, verify its operation, demonstrate it on the FPGA board, and document any changes. See the [main README](../README.md#general-project-guidelines) for the general guidelines, schedule, and evaluation criteria.
+The first three clock projects are **separate assignments**, with different target complexity and maximum grades: 3/5, 4/5, and 5/5, respectively. The requirements for projects 4–12 will be refined one by one. The maximum grade is a ceiling, not an automatic grade.
 
-## Grading variants
-
-Project pages may define **basic (maximum 3/5), intermediate (maximum 4/5), and advanced (maximum 5/5)** variants. The final maximum grades and specific requirements will be confirmed in the individual assignments. Completing a variant does not automatically guarantee its maximum grade.
+See [General Project Guidelines](../README.md#general-project-guidelines), the [recommended schedule](../README.md#recommended-project-schedule), and the [evaluation criteria](../README.md#evaluation-criteria).
