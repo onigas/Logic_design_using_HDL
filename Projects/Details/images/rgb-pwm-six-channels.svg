@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440">
+<rect width="960" height="440" rx="18" fill="#f7f9fc"/>
+<text x="480" y="42" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#203451" text-anchor="middle">Six Independent PWM Channels — Two RGB LEDs</text>
+<rect x="32" y="78" width="260" height="312" rx="16" fill="#eaf0f8" stroke="#b1c2d7"/>
+<text x="162" y="119" font-family="Arial,sans-serif" font-size="23" fill="#203451" text-anchor="middle">FPGA PWM Generator</text>
+<g font-family="Arial,sans-serif" font-size="21" fill="#203451">
+<text x="61" y="168">PWM 0 — Red</text><text x="61" y="204">PWM 1 — Green</text><text x="61" y="240">PWM 2 — Blue</text>
+<text x="61" y="293">PWM 3 — Red</text><text x="61" y="329">PWM 4 — Green</text><text x="61" y="365">PWM 5 — Blue</text>
+</g>
+<g stroke-width="3" fill="none">
+<path d="M292 161 H445 M292 197 H445 M292 233 H445" stroke="#587fa5"/>
+<path d="M292 286 H445 M292 322 H445 M292 358 H445" stroke="#587fa5"/>
+</g>
+<rect x="452" y="99" width="476" height="155" rx="18" fill="#fff" stroke="#bfd0df"/>
+<rect x="452" y="269" width="476" height="155" rx="18" fill="#fff" stroke="#bfd0df"/>
+<g font-family="Arial,sans-serif" font-weight="bold" fill="#203451">
+<text x="495" y="132" font-size="23">RGB LED 1</text><text x="495" y="302" font-size="23">RGB LED 2</text>
+</g>
+<g font-family="Arial,sans-serif" font-size="16" fill="#54657a">
+<text x="495" y="166">R / G / B duty cycles:  70% / 15% / 65%</text>
+<text x="495" y="336">R / G / B duty cycles:  10% / 75% / 55%</text>
+</g>
+<g>
+<circle cx="822" cy="178" r="47" fill="#b34da6" opacity=".24"/>
+<circle cx="822" cy="178" r="31" fill="#b34da6" stroke="#84567b" stroke-width="2"/>
+<circle cx="822" cy="348" r="47" fill="#23bea3" opacity=".24"/>
+<circle cx="822" cy="348" r="31" fill="#23bea3" stroke="#368779" stroke-width="2"/>
+</g>
+<text x="690" y="409" font-family="Arial,sans-serif" font-size="13" fill="#64748b">Illustrative colors — not calibrated output</text>
+</svg>
