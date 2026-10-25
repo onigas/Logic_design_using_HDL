@@ -11,6 +11,16 @@
 
 Design an FPGA-based traffic light controller for a road intersection with two vehicle directions (North–South and East–West) and pedestrian crossings. Extend the finite-state-machine traffic light controller studied in the [UA Laboratory 6 (2024)](https://irh.inf.unideb.hu/~onigai/UA/2024/L6.pdf) with pedestrian request handling and a graphical monitoring interface. The VGA monitor must show a schematic of the intersection, the current red/yellow/green signal for each vehicle direction, pedestrian red/green signals, and the remaining time until the next signal change. Students may reuse the laboratory FSM as a starting point, but must implement and explain the new pedestrian logic, countdown timing, and VGA visualization.
 
+## Explanatory Figures
+
+![Traffic controller: inputs, FSM, timer, outputs and VGA](images/traffic-controller-architecture.svg)
+
+*Functional architecture showing how pedestrian requests, timed traffic phases, light outputs and the VGA renderer share the same controller state.*
+
+![Illustrative VGA intersection and countdown](images/traffic-vga-preview.svg)
+
+*Example of the intended on-screen visualization. The depicted lights and seconds represent one illustrative phase, not a prescribed timing sequence.*
+
 ## Minimum Implementation Requirements
 
 1. Control two mutually exclusive vehicle directions with safe red/yellow/green sequences and all-red transition intervals.
