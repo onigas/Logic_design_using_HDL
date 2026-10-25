@@ -9,20 +9,30 @@
 
 ## Project Description
 
-Implement a digital audio waveform generator and simple audio processing system on the Nexys 4 DDR. Sine-wave lookup tables or numerically controlled oscillators produce sampled signals, which are converted into an audio PWM waveform through the onboard audio output. Students should verify frequency generation, sample rate, amplitude and PWM behavior; a more ambitious version can process data from the onboard PDM microphone.
+Build a small **interactive audio synthesizer** in VHDL or Verilog. The student must be able to change the sound **while the FPGA is running**, using the board's buttons and switches: choose between two waveform types, make the pitch higher or lower, and adjust the volume. Audio is generated digitally, converted to a PWM output by FPGA logic, and heard through an appropriate audio device connected to the board. Students may reuse the sine-wave generator and PWM audio output from Lab 09, but must add real-time waveform selection, frequency adjustment, and volume control.
+
+## Required Equipment
+
+- Nexys 4 DDR / Nexys A7-100T FPGA board and programming computer.
+- **An external audio listening device**, such as suitable headphones or **powered (active) speakers**, connected to the board's audio output. The board does not have an integrated loudspeaker. Use the appropriate connector and safe output level; do not connect a passive loudspeaker directly to an FPGA pin.
+- No oscilloscope or external logic analyzer is required.
 
 ## Minimum Implementation Requirements
 
-- Generate at least two selectable audio waveforms or musical tones.
-- Implement programmable frequency and amplitude control.
-- Produce sound on the Nexys 4 DDR PWM audio output.
-- Verify sampling and PWM timing in simulation.
+1. **Selectable waveform:** Generate at least two audibly different waveforms, for example a sine wave (smooth tone) and a square wave (sharper tone). Use a switch or button to choose the waveform during operation.
+2. **Pitch/frequency adjustment:** Use board controls to increase or decrease the audible frequency while the FPGA is running. Demonstrate at least several clearly distinct frequencies (for example, 220 Hz, 440 Hz, and 880 Hz); the waveform must change pitch without rebuilding the bitstream.
+3. **Volume/amplitude adjustment:** Use buttons or switches to select at least three distinct output levels, including mute, low, and high volume. Implement this by adjusting digital sample amplitude **before** PWM generation.
+4. **Audible output:** Route the digitally generated samples to the onboard PWM audio interface and demonstrate sound using connected headphones or powered speakers.
+5. **Live demonstration:** Show waveform switching, pitch adjustment, volume adjustment, and mute in real time on the physical Nexys 4 DDR board. The effect must be audible and repeatable.
+6. **HDL architecture:** Explain the waveform/sample generator, selection logic, frequency control, amplitude scaling, and PWM output modules. Provide a basic functional simulation of the timing-critical modules as supporting evidence; the principal assessment is the working hardware demonstration.
 
 ## Optional Extensions
 
-- Multiple simultaneous tones and mixing
-- Echo, distortion, or FIR filtering
-- PDM microphone capture and processing
+- Mix two generated tones with independent frequencies and adjustable levels.
+- Add simple audio effects such as echo, distortion, or digital filtering.
+- Capture audio using the onboard PDM microphone and apply processing before playback.
+
+**Scope:** This is a waveform synthesizer and audio processor, not a piano keyboard project. Piano-style note selection and recording/playback belong to Projects 15 and 16.
 
 ## References and Source Projects
 
