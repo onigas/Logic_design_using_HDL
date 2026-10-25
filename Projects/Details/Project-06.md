@@ -19,9 +19,6 @@ The implemented system must periodically acquire acceleration measurements on al
 
 *Functional modules for ADXL362 configuration, XYZ acquisition, display, event detection and UART reporting.*
 
-![Conceptual ADXL362 SPI read waveform](images/adxl362-spi-waveform.svg)
-
-*Conceptual command/address/read sequence. Refer to the ADXL362 datasheet for the exact SPI clock phase, polarity, command byte and byte-level timing; the drawing is not a cycle-accurate simulation.*
 
 ## Minimum Implementation Requirements
 
