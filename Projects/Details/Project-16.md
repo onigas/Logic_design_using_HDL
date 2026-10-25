@@ -1,6 +1,6 @@
 # Project 16 — FPGA-Based Digital Piano with Recording and Playback
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Digilent Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -34,8 +34,8 @@ Key-event decoder, tone generator, PWM audio output, recording FSM, BRAM event b
 
 ## References and Source Projects
 
-- [Course Lab 09 — PWM Audio](../Lab09/L9.4_PWM_Audio/)
-- [Course Lab 04 — FPGA Memories](../Lab04/)
+- [Course Lab 09 — PWM Audio](../../Lab09/L9.4_PWM_Audio/)
+- [Course Lab 04 — FPGA Memories](../../Lab04/)
 - [Digilent Nexys 4 DDR GPIO Demo](https://github.com/Digilent/Nexys-4-DDR-GPIO)
 - [Digilent Nexys 4 DDR Out-of-Box Demo](https://github.com/Digilent/Nexys-4-DDR-OOB)
 
@@ -43,4 +43,4 @@ Key-event decoder, tone generator, PWM audio output, recording FSM, BRAM event b
 
 The Nexys 4 DDR PWM audio output can be used for audible tone generation. Timebase accuracy and audio output levels should be checked on the physical board.
 
-See the [general project guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines) and [evaluation criteria](../../README.md#evaluation-criteria).
