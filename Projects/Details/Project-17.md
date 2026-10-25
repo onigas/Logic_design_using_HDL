@@ -1,6 +1,6 @@
 # Project 17 — FPGA-Based Robotic Arm Controller
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Digilent Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -34,11 +34,11 @@ Servo pulse generator, joint position registers, user input controller, manual/a
 ## References and Source Projects
 
 - [3DOF Robotic Arm FPGA — Nexys 4 DDR (Verilog project)](https://github.com/ZaidAkhtar/3DOF_RoboticArmFPGA)
-- [Course Lab 09 — PWM](../Lab09/)
+- [Course Lab 09 — PWM](../../Lab09/)
 - [Digilent Nexys 4 DDR Resources](https://github.com/Digilent/Nexys4DDR)
 
 ## Technical Notes
 
 **Hardware safety:** Motors must use a suitable independent power supply and a common ground with the FPGA interface where applicable. Do not power servo motors from FPGA I/O pins. Confirm connector voltage levels and provide proper interfacing and emergency-stop provisions.
 
-See the [general project guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines) and [evaluation criteria](../../README.md#evaluation-criteria).
