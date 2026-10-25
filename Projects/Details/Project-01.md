@@ -1,6 +1,6 @@
 # Project 01 — Digital Clock with Seven-Segment Display
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -32,4 +32,4 @@ A working FPGA demonstration, an architectural block diagram, functional simulat
 
 Show correct 12/24-hour conversion and rollover, time setting and the specific output and alarm functionality of this project. The clock does not retain time after power loss without additional hardware.
 
-See [general project guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).
+See [general project guidelines](../../README.md#general-project-guidelines) and [evaluation criteria](../../README.md#evaluation-criteria).
