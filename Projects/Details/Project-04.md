@@ -11,6 +11,12 @@
 
 Design an FPGA-based multichannel PWM controller for the **two onboard RGB LEDs** of the Nexys 4 DDR. Each RGB LED comprises red, green and blue components, so the implementation must generate **six independently configurable PWM outputs** in total. Students will control color and brightness using switches and push buttons, demonstrate independent RGB color mixing and implement automatic lighting effects. The focus is on visible real-time behavior on the board, rather than external measurement instruments. The existing PWM LED and Knight Rider laboratory modules may be reused or adapted.
 
+## Hardware Illustration
+
+![Two onboard RGB LEDs controlled by six independent FPGA PWM channels](images/rgb-pwm-six-channels.svg)
+
+*Conceptual view of the six independent PWM outputs controlling the two onboard RGB LEDs. The illustrated colors are examples, not calibrated measurements.*
+
 ## Minimum Implementation Requirements
 
 1. Generate six independently controlled PWM outputs: R, G and B for each of the two onboard RGB LEDs.
