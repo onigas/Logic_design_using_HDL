@@ -1,6 +1,6 @@
 # Project 05 — Intelligent Traffic Light Controller
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -26,7 +26,7 @@ Implement an HDL finite-state-machine controller for a two-road intersection wit
 
 ## References and Source Projects
 
-- [Course laboratory modules](../README.md#laboratories)
+- [Course laboratory modules](../../README.md#laboratories)
 - [HDLBits FSM exercises](https://hdlbits.01xz.net/wiki/Main_Page)
 - [Hackster FPGA traffic-light projects](https://www.hackster.io/search?i=projects&q=FPGA%20traffic%20light)
 
@@ -34,4 +34,4 @@ Implement an HDL finite-state-machine controller for a two-road intersection wit
 
 HDL source code, relevant constraints and testbench files, architectural block diagram, simulation evidence, working FPGA demonstration, resource utilization report, and a brief technical explanation of any reused reference design.
 
-See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines), [recommended schedule](../../README.md#recommended-project-schedule), and [evaluation criteria](../../README.md#evaluation-criteria).
