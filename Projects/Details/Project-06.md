@@ -20,12 +20,16 @@ Build an SPI master and acquisition controller in VHDL or Verilog to communicate
 
 ## Optional Extensions
 
-- UART transmission of sensor measurements
-- Orientation or motion event detection
-- Threshold-based alarm and acquisition statistics
+- UART transmission of measured X/Y/Z acceleration values to a PC terminal.
+- Orientation or motion detection with configurable thresholds and an LED alarm.
+- Periodic sampling with selectable output data rate and a simple measurement history or peak-value register.
+- Basic filtering or averaging of the acceleration measurements before display.
+
+These are suggested project extensions, not verified exercises extracted from the linked L13 handout.
 
 ## References and Source Projects
 
+- [Logic Design Using HDL (2023) — Laboratory 13 (L13.pdf), instructor course material](https://irh.inf.unideb.hu/~onigai/LDuHDL/2023/L13.pdf) *(linked as supplementary course material; its detailed content has not yet been verified)*
 - [Digilent Nexys4 DDR Out-of-Box example](https://github.com/Digilent/Nexys-4-DDR-OOB)
 - [Digilent VHDL top-level sensor integration](https://github.com/Digilent/Nexys-4-DDR-OOB/blob/master/src/hdl/Nexys4DdrUserDemo.vhd)
 - [ADXL362 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/adxl362.pdf)
