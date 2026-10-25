@@ -1,6 +1,6 @@
 # Project 12 — FPGA-Based FIR Digital Filter
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -35,4 +35,4 @@ Implement a signed fixed-point finite impulse response filter in synthesizable H
 
 HDL source code, relevant constraints and testbench files, architectural block diagram, simulation evidence, working FPGA demonstration, resource utilization report, and a brief technical explanation of any reused reference design.
 
-See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines), [recommended schedule](../../README.md#recommended-project-schedule), and [evaluation criteria](../../README.md#evaluation-criteria).
