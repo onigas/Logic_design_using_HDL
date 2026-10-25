@@ -1,39 +1,46 @@
-# Project 07 — Interactive VGA Graphics System
+# Project 07 — Interactive VGA Graphics and Text Display
 
 [← Back to the project list](README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
 **Duration:** 4–5 weeks  
-**Maximum grade:** proposed variants 3/5, 4/5, 5/5 — pending approval
+**Maximum grade:** **3/5**
 
 ## Project Description
 
-Extend the VGA controller and Block ROM sprite exercises from Labs 06 and 07 into an interactive graphics application. Basic work combines several independently movable graphics objects and text with priority/overlap handling. More advanced variants implement a small pixel canvas and drawing interface, and optionally a graphics editor with multiple tools. Simply repeating stripes, a positioned ROM image or the bouncing screensaver is insufficient.
+Design an interactive VGA graphics display that combines multiple geometric objects, bitmap sprites, and text. Reuse the video timing controller developed in Lab 06 and extend the sprite renderer from Lab 07. Users must control graphics properties and movement using onboard buttons and switches. Unlike the laboratory exercises, the design must compose several independent graphics layers and report object coordinates or states.
 
 ## Minimum Implementation Requirements
 
-- Reuse the existing 1024 × 768 VGA timing system and 65 MHz pixel clock.
-- Render at least three distinguishable graphical objects and a ROM-based text label.
-- Provide user-controlled movement or parameter selection, not only automatic animation.
-- Implement and explain object compositing/overlap priority.
-- Verify positioning and boundaries in simulation and on the monitor.
+1. Generate 1024 × 768 @ 60 Hz VGA output using a 65 MHz pixel clock.
+2. Display at least three independent, distinguishable graphics objects simultaneously.
+3. Move at least two objects using user controls; include boundary checks.
+4. Display a fixed or dynamic text label using a character bitmap ROM.
+5. Handle overlapping objects with explicitly implemented priority rules.
+6. Provide simulation and an FPGA demonstration showing input response and graphics composition.
 
-## Optional Extensions and Proposed Grading Variants
+## Optional Extensions
 
-- Variant A (proposed maximum 3/5): interactive sprites, text, and coordinate/status display.
-- Variant B (proposed maximum 4/5): framebuffer-based Paint tool with cursor, palette and erase operation; a lower-resolution logical canvas may be scaled to VGA.
-- Variant C (proposed maximum 5/5): line/rectangle tools, graphical menus, and optionally PS/2 mouse or UART save/load.
+- Selectable object colors and sizes.
+- Status panel showing coordinates or active object.
+- UART control for selecting and moving objects.
+
+## Suggested HDL Architecture
+
+Clocking / pixel enable, VGA timing, pixel coordinates, graphics renderer or framebuffer controller, input debouncer, cursor / drawing FSM, and any project-specific text ROM, object priority or shape rasterization units.
 
 ## References and Source Projects
 
-- [Lab 06 VGA controller](../Lab06/)
-- [Lab 07 VGA sprites and screen-saver](../Lab07/)
-- [Digilent Nexys 4 DDR Out-of-Box demo](https://github.com/Digilent/Nexys-4-DDR-OOB)
-- [Adam Taylor — Space Invaders in VHDL (graphics concepts)](https://www.hackster.io/adam-taylor/space-invaders-on-any-arty-board-using-vhdl-and-pmod-vga-1f5161)
+- [Course Lab 06 — VGA controller](../Lab06/)
+- [Course Lab 07 — sprites and screen-saver](../Lab07/)
+- [Digilent Nexys 4 DDR resources](https://github.com/Digilent/Nexys4DDR)
+- [Adam Taylor — Space Invaders graphics concepts](https://www.hackster.io/adam-taylor/space-invaders-on-any-arty-board-using-vhdl-and-pmod-vga-1f5161)
 
 ## Deliverables
 
-HDL source code, relevant constraints and testbench files, architectural block diagram, simulation evidence, working FPGA demonstration, resource utilization report, and a brief technical explanation of any reused reference design.
+HDL source, XDC constraints, architectural block diagram, testbenches and simulations, working FPGA demonstration, Vivado utilization/timing reports, and documentation of reused modules.
 
-See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).
+**Important:** Reproduction of Lab 06 color stripes or Lab 07 single-sprite bounce alone does not satisfy the requirements for this project.
+
+See the [general guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).

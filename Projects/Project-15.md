@@ -1,44 +1,43 @@
-# Project 15 — FPGA-Based Robotic Arm Controller
+# Project 15 — FPGA-Based Digital Piano
 
 [← Back to the project list](README.md)
 
 **Platform:** Digilent Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
 **Duration:** 4–5 weeks  
-**Maximum grade:** 5/5 (proposed)
+**Maximum grade:** 4/5
 
 ## Project Description
 
-Design and implement an HDL-based controller for a small robotic arm using the Nexys 4 DDR FPGA board. The design should independently control the positions of multiple servo motors by generating correctly timed control pulses. Joint angles should be adjustable using onboard switches/buttons or an optional UART interface. A finite state machine should coordinate manual operation, safe initialization, and execution of a predefined movement sequence. The mechanical design and the number of joints may be adapted to the robotic arm available to the student. The student must explain the PWM/servo pulse generation, joint position registers, and control logic.
+Design a playable digital piano using VHDL or Verilog on the Nexys 4 DDR board. The piano must produce distinct musical notes when the user presses the assigned buttons or keys. Sound is generated through programmable tone counters or a direct digital synthesis module and reproduced using the onboard PWM audio output. The system should display the current note and support a selectable octave or a simple melody mode. A connected external keypad or USB keyboard may be used only if the required interface is available and documented; the default implementation uses onboard controls.
 
 ## Minimum Implementation Requirements
 
-- Control at least three servo-driven joints with independently adjustable positions.
-- Generate servo-compatible periodic control pulses with configurable pulse widths (typically around 1–2 ms in a ~20 ms frame, subject to servo specifications).
-- Provide user controls for selecting a joint and adjusting its target angle.
-- Implement safe startup positions, travel limits, and an emergency stop/disable function.
-- Execute at least one predefined multi-joint movement sequence.
-- Simulate pulse timing and demonstrate real hardware motion.
+- Generate at least eight distinct notes with appropriate frequencies.
+- Select notes using onboard buttons and/or switches.
+- Produce sound using the onboard PWM audio output.
+- Display the active note or its index using LEDs or the seven-segment display.
+- Implement clean key transitions and silence when no key is pressed.
+- Simulate tone timing and demonstrate the circuit on the FPGA.
 
 ## Optional Extensions
 
-- Record and replay a sequence of arm positions.
-- Adjustable movement speed and interpolation between positions.
-- UART command interface or predefined pick-and-place routine.
-- Position feedback if supported by the actuators.
+- Polyphonic generation of at least two simultaneous notes.
+- Adjustable octave, instrument tone, or volume.
+- External keyboard input with a dedicated interface.
 
 ## Suggested HDL Modules
 
-Servo pulse generator, joint position registers, user input controller, manual/automatic FSM, joint limit protection, movement sequencer.
+Note decoder, button synchronizer/debouncer, tone/NCO generator, PWM audio output, note display controller.
 
 ## References and Source Projects
 
-- [3DOF Robotic Arm FPGA — Nexys 4 DDR (Verilog project)](https://github.com/ZaidAkhtar/3DOF_RoboticArmFPGA)
-- [Course Lab 09 — PWM](../Lab09/)
-- [Digilent Nexys 4 DDR Resources](https://github.com/Digilent/Nexys4DDR)
+- [Course Lab 09 — PWM Audio](../Lab09/L9.4_PWM_Audio/)
+- [Digilent Nexys 4 DDR GPIO Demo](https://github.com/Digilent/Nexys-4-DDR-GPIO)
+- [Digilent Nexys 4 DDR Out-of-Box Demo](https://github.com/Digilent/Nexys-4-DDR-OOB)
 
 ## Technical Notes
 
-**Hardware safety:** Motors must use a suitable independent power supply and a common ground with the FPGA interface where applicable. Do not power servo motors from FPGA I/O pins. Confirm connector voltage levels and provide proper interfacing and emergency-stop provisions.
+The Nexys 4 DDR PWM audio output can be used for audible tone generation. Timebase accuracy and audio output levels should be checked on the physical board.
 
 See the [general project guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).

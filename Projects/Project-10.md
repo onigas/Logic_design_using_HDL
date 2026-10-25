@@ -1,4 +1,4 @@
-# Project 10 — FPGA-Based FIR Digital Filter
+# Project 10 — FPGA-Based Pong / Space Invaders Game
 
 [← Back to the project list](README.md)
 
@@ -9,27 +9,26 @@
 
 ## Project Description
 
-Implement a signed fixed-point finite impulse response filter in synthesizable HDL. The design should include sample delays, configurable or constant coefficients, multiplication and accumulation, and a testbench that compares output samples with a software reference. Evaluate the impact of arithmetic precision, pipelining and filter length on FPGA resources and latency.
+Design or adapt a playable arcade game entirely in FPGA logic, using VGA for video and buttons or other available inputs for player control. Students should implement sprite generation, movement, collision detection, scoring and game-state transitions, and document how concurrent hardware modules interact. Reproducing an open-source implementation is acceptable when the student demonstrates comprehension and extends the game.
 
 ## Minimum Implementation Requirements
 
-- Implement an FIR filter with at least eight taps and a documented fixed-point format.
-- Verify response using impulse, sinusoidal and multitone input samples.
-- Compare RTL results with Python/MATLAB reference outputs.
-- Present FPGA DSP/LUT utilization, timing, and numerical error.
+- Playable Pong, Snake or Space Invaders style game on VGA.
+- Player controls, animated objects, and collision detection.
+- Score display, start, game-over and restart handling.
+- HDL simulation and hardware demonstration.
 
 ## Optional Extensions
 
-- Programmable coefficients or multiple filter modes
-- Pipelined vs serial MAC comparison
-- Audio PWM or UART input/output demonstration
+- Additional game levels or enemy patterns
+- Sound effects with PWM audio
+- Two-player mode or alternative controller
 
 ## References and Source Projects
 
-- Xilinx DSP Primer — instructor-provided archive (separate from The Zynq Book)
-- [16-tap Verilog FIR reference](https://github.com/rombarak/FIR-Filter)
-- [Pipelined FIR HDL example](https://github.com/Mounika2198/fpga-projects/tree/main/03_fir_filter)
-- [Adam Taylor projects](https://www.hackster.io/adam-taylor/projects)
+- [Adam Taylor — Space Invaders in VHDL](https://www.hackster.io/adam-taylor/space-invaders-on-any-arty-board-using-vhdl-and-pmod-vga-1f5161)
+- [Return of the Snake — Nexys 4 DDR](https://github.com/IEEE-NITK/Return_Of_The_Snake)
+- [Course Lab 07](../Lab07/)
 
 ## Deliverables
 

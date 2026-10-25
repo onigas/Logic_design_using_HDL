@@ -5,7 +5,7 @@
 **Development environment:** Vivado 2022.2  
 **Suggested duration:** 4–5 weeks
 
-The 15 proposals below are independent projects. Click a title to open its assignment. Maximum grades use a **1–5 scale**. Assignments may use and adapt existing open-source HDL implementations.
+The **17 proposals** below are independent projects. Click a title to open the assignment. Maximum grades are on a **1–5 scale**. Students may reproduce and adapt open-source HDL reference implementations.
 
 | No. | Project title | Maximum grade |
 | ---: | --- | --- |
@@ -15,18 +15,20 @@ The 15 proposals below are independent projects. Click a title to open its assig
 | 4 | [Multichannel PWM Generator](Project-04.md) | To be specified |
 | 5 | [Intelligent Traffic Light Controller](Project-05.md) | To be specified |
 | 6 | [SPI Interface for the ADXL362 Accelerometer](Project-06.md) | To be specified |
-| 7 | [Interactive VGA Graphics System](Project-07.md) | To be specified |
-| 8 | [FPGA-Based Pong / Space Invaders Game](Project-08.md) | To be specified |
-| 9 | [FPGA-Based Digital Logic Analyzer](Project-09.md) | To be specified |
-| 10 | [FPGA-Based FIR Digital Filter](Project-10.md) | To be specified |
-| 11 | [PWM Audio Signal Processor](Project-11.md) | To be specified |
-| 12 | [Digital Security System with Access Code](Project-12.md) | To be specified |
-| 13 | [FPGA-Based Digital Piano](Project-13.md) | **4/5** |
-| 14 | [FPGA-Based Digital Piano with Recording and Playback](Project-14.md) | **5/5** |
-| 15 | [FPGA-Based Robotic Arm Controller](Project-15.md) | **5/5 (proposed)** |
+| 7 | [Interactive VGA Graphics and Text Display](Project-07.md) | 3/5 |
+| 8 | [FPGA VGA Drawing Application](Project-08.md) | 4/5 |
+| 9 | [Advanced FPGA VGA Graphics Editor](Project-09.md) | 5/5 |
+| 10 | [FPGA-Based Pong / Space Invaders Game](Project-10.md) | To be specified |
+| 11 | [FPGA-Based Digital Logic Analyzer](Project-11.md) | To be specified |
+| 12 | [FPGA-Based FIR Digital Filter](Project-12.md) | To be specified |
+| 13 | [PWM Audio Signal Processor](Project-13.md) | To be specified |
+| 14 | [Digital Security System with Access Code](Project-14.md) | To be specified |
+| 15 | [FPGA-Based Digital Piano](Project-15.md) | 4/5 |
+| 16 | [FPGA-Based Digital Piano with Recording and Playback](Project-16.md) | 5/5 |
+| 17 | [FPGA-Based Robotic Arm Controller](Project-17.md) | 5/5 (proposed) |
 
-## Important notes
+## Notes
 
-The first three clock projects are **separate assignments**, with different target complexity and maximum grades: 3/5, 4/5, and 5/5, respectively. The requirements for projects 4–12 will be refined one by one. Projects 13–15 are already assigned to students and have individual specifications. The maximum grade is a ceiling, not an automatic grade.
+Projects 1–3 are separate digital clock assignments with maximum grades 3/5, 4/5 and 5/5. Projects 7–9 are separate VGA graphics assignments with maximum grades 3/5, 4/5 and 5/5. The two piano projects and the robotic arm project (15–17) have already been selected by students. A maximum grade is a ceiling, not an automatic grade.
 
-See [General Project Guidelines](../README.md#general-project-guidelines), the [recommended schedule](../README.md#recommended-project-schedule), and the [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).

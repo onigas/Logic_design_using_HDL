@@ -1,38 +1,46 @@
-# Project 09 — FPGA-Based Digital Logic Analyzer
+# Project 09 — Advanced FPGA VGA Graphics Editor
 
 [← Back to the project list](README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
 **Duration:** 4–5 weeks  
-**Maximum grade:** To be defined
+**Maximum grade:** **5/5**
 
 ## Project Description
 
-Create a compact multi-channel logic analyzer using FPGA GPIO inputs. Samples captured at a programmable rate are buffered in BRAM after an edge or manual trigger and transmitted over UART to a PC for display. Students should explain acquisition timing, trigger circuits, buffer addressing and the relationship between sample rate, channel count and memory depth.
+Design a more advanced FPGA-based graphics editor with multiple interactive drawing tools. The design should extend an editable framebuffer canvas with line and rectangle primitives, a visual toolbar/menu, tool selection and a color palette. An FSM or dedicated drawing engine must rasterize shapes into memory without a processor. Students should document the memory architecture, video pipeline, input state machines and resource usage.
 
 ## Minimum Implementation Requirements
 
-- Sample at least four digital channels using 3.3 V-compatible Pmod inputs.
-- Implement BRAM capture memory and manual or edge triggering.
-- Provide configurable capture rate and UART data transfer.
-- Show captured waveforms on a PC and verify triggering in simulation.
+1. Generate 1024 × 768 @ 60 Hz VGA video with a framebuffer-based canvas.
+2. Provide interactive cursor, pixel painting, erasing, and clear operations.
+3. Implement at least two geometric drawing tools beyond single-pixel painting: line and rectangle.
+4. Display a graphical toolbar/menu and indicate the active tool and color.
+5. Implement shape rasterization with synthesizable HDL control/datapath, e.g. line-drawing algorithm and rectangle edge generation.
+6. Test tool state transitions and boundary conditions in simulation and demonstrate the complete editor.
 
 ## Optional Extensions
 
-- Pre-trigger and post-trigger capture
-- Multi-bit pattern trigger
-- UART/SPI protocol decoding or sigrok-compatible export
+- Filled primitives or simple flood fill with a bounded work queue.
+- PS/2 mouse control if compatible external hardware is available.
+- UART picture save/load or single-step Undo using additional memory.
+
+## Suggested HDL Architecture
+
+Clocking / pixel enable, VGA timing, pixel coordinates, graphics renderer or framebuffer controller, input debouncer, cursor / drawing FSM, and any project-specific text ROM, object priority or shape rasterization units.
 
 ## References and Source Projects
 
-- [Course Lab 04 FPGA memories](../Lab04/)
-- [Course Lab 08 UART](../Lab08/)
-- [sigrok signal analysis](https://sigrok.org/wiki/Main_Page)
-- [Nexys4 DDR board resources](https://github.com/Digilent/Nexys4DDR)
+- [Course Lab 06 — VGA controller](../Lab06/)
+- [Course Lab 07 — sprites and screen-saver](../Lab07/)
+- [Digilent Nexys 4 DDR resources](https://github.com/Digilent/Nexys4DDR)
+- [Adam Taylor — Space Invaders graphics concepts](https://www.hackster.io/adam-taylor/space-invaders-on-any-arty-board-using-vhdl-and-pmod-vga-1f5161)
 
 ## Deliverables
 
-HDL source code, relevant constraints and testbench files, architectural block diagram, simulation evidence, working FPGA demonstration, resource utilization report, and a brief technical explanation of any reused reference design.
+HDL source, XDC constraints, architectural block diagram, testbenches and simulations, working FPGA demonstration, Vivado utilization/timing reports, and documentation of reused modules.
 
-See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).
+**Important:** Reproduction of Lab 06 color stripes or Lab 07 single-sprite bounce alone does not satisfy the requirements for this project.
+
+See the [general guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).

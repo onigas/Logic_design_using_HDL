@@ -1,4 +1,4 @@
-# Project 12 — Digital Security System with Access Code
+# Project 12 — FPGA-Based FIR Digital Filter
 
 [← Back to the project list](README.md)
 
@@ -9,27 +9,27 @@
 
 ## Project Description
 
-Develop an HDL-based access control system with a programmable or predefined code entered through FPGA switches and push buttons. A finite state machine manages digit entry, code verification, access grant, error indication, failed-attempt counting and lockout. Seven-segment digits and LEDs show the interface state; no real door actuator is needed.
+Implement a signed fixed-point finite impulse response filter in synthesizable HDL. The design should include sample delays, configurable or constant coefficients, multiplication and accumulation, and a testbench that compares output samples with a software reference. Evaluate the impact of arithmetic precision, pipelining and filter length on FPGA resources and latency.
 
 ## Minimum Implementation Requirements
 
-- Support a four-symbol access code and explicit entry/confirmation.
-- Debounce input controls and implement code-verification FSM.
-- Indicate access granted/denied and lock after three failed attempts.
-- Support reset, timeout or lock release, with functional testbenches.
+- Implement an FIR filter with at least eight taps and a documented fixed-point format.
+- Verify response using impulse, sinusoidal and multitone input samples.
+- Compare RTL results with Python/MATLAB reference outputs.
+- Present FPGA DSP/LUT utilization, timing, and numerical error.
 
 ## Optional Extensions
 
-- Change code through a protected programming state
-- UART user interface and status logging
-- Multiple users or a countdown during temporary lockout
+- Programmable coefficients or multiple filter modes
+- Pipelined vs serial MAC comparison
+- Audio PWM or UART input/output demonstration
 
 ## References and Source Projects
 
-- [Course Lab 05 ALU and display modules](../Lab05/)
-- [Course Lab 08 UART](../Lab08/)
-- [Digilent Nexys4 DDR GPIO demo](https://github.com/Digilent/Nexys-4-DDR-GPIO)
-- [HDLBits FSM exercises](https://hdlbits.01xz.net/wiki/Main_Page)
+- Xilinx DSP Primer — instructor-provided archive (separate from The Zynq Book)
+- [16-tap Verilog FIR reference](https://github.com/rombarak/FIR-Filter)
+- [Pipelined FIR HDL example](https://github.com/Mounika2198/fpga-projects/tree/main/03_fir_filter)
+- [Adam Taylor projects](https://www.hackster.io/adam-taylor/projects)
 
 ## Deliverables
 

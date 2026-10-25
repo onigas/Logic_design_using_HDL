@@ -1,4 +1,4 @@
-# Project 11 — PWM Audio Signal Processor
+# Project 11 — FPGA-Based Digital Logic Analyzer
 
 [← Back to the project list](README.md)
 
@@ -9,26 +9,27 @@
 
 ## Project Description
 
-Implement a digital audio waveform generator and simple audio processing system on the Nexys 4 DDR. Sine-wave lookup tables or numerically controlled oscillators produce sampled signals, which are converted into an audio PWM waveform through the onboard audio output. Students should verify frequency generation, sample rate, amplitude and PWM behavior; a more ambitious version can process data from the onboard PDM microphone.
+Create a compact multi-channel logic analyzer using FPGA GPIO inputs. Samples captured at a programmable rate are buffered in BRAM after an edge or manual trigger and transmitted over UART to a PC for display. Students should explain acquisition timing, trigger circuits, buffer addressing and the relationship between sample rate, channel count and memory depth.
 
 ## Minimum Implementation Requirements
 
-- Generate at least two selectable audio waveforms or musical tones.
-- Implement programmable frequency and amplitude control.
-- Produce sound on the Nexys 4 DDR PWM audio output.
-- Verify sampling and PWM timing in simulation.
+- Sample at least four digital channels using 3.3 V-compatible Pmod inputs.
+- Implement BRAM capture memory and manual or edge triggering.
+- Provide configurable capture rate and UART data transfer.
+- Show captured waveforms on a PC and verify triggering in simulation.
 
 ## Optional Extensions
 
-- Multiple simultaneous tones and mixing
-- Echo, distortion, or FIR filtering
-- PDM microphone capture and processing
+- Pre-trigger and post-trigger capture
+- Multi-bit pattern trigger
+- UART/SPI protocol decoding or sigrok-compatible export
 
 ## References and Source Projects
 
-- [Course Lab 09 PWM Audio](../Lab09/L9.4_PWM_Audio/)
-- [Digilent Nexys4 DDR GPIO demo](https://github.com/Digilent/Nexys-4-DDR-GPIO)
-- [Digilent Out-of-Box audio demonstration](https://github.com/Digilent/Nexys-4-DDR-OOB)
+- [Course Lab 04 FPGA memories](../Lab04/)
+- [Course Lab 08 UART](../Lab08/)
+- [sigrok signal analysis](https://sigrok.org/wiki/Main_Page)
+- [Nexys4 DDR board resources](https://github.com/Digilent/Nexys4DDR)
 
 ## Deliverables
 
