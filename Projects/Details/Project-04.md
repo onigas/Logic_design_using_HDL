@@ -1,6 +1,6 @@
 # Project 04 — Multichannel PWM Generator
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -26,12 +26,12 @@ Develop an HDL-based multi-channel pulse-width modulation generator to control t
 
 ## References and Source Projects
 
-- [Course Lab09 PWM LED](../Lab09/L9.1_PWM_LED/)
-- [Course Lab09 Knight Rider PWM](../Lab09/L9.3_Knight_Rider/)
+- [Course Lab09 PWM LED](../../Lab09/L9.1_PWM_LED/)
+- [Course Lab09 Knight Rider PWM](../../Lab09/L9.3_Knight_Rider/)
 - [Digilent Nexys 4 DDR GPIO demo](https://github.com/Digilent/Nexys-4-DDR-GPIO)
 
 ## Deliverables
 
 HDL source code, relevant constraints and testbench files, architectural block diagram, simulation evidence, working FPGA demonstration, resource utilization report, and a brief technical explanation of any reused reference design.
 
-See the [general project guidelines](../README.md#general-project-guidelines), [recommended schedule](../README.md#recommended-project-schedule), and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general project guidelines](../../README.md#general-project-guidelines), [recommended schedule](../../README.md#recommended-project-schedule), and [evaluation criteria](../../README.md#evaluation-criteria).
