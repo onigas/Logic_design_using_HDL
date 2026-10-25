@@ -1,6 +1,6 @@
 # Project 08 — FPGA VGA Drawing Application
 
-[← Back to the project list](README.md)
+[← Back to the project list](../README.md)
 
 **Platform:** Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
@@ -32,8 +32,8 @@ Clocking / pixel enable, VGA timing, pixel coordinates, graphics renderer or fra
 
 ## References and Source Projects
 
-- [Course Lab 06 — VGA controller](../Lab06/)
-- [Course Lab 07 — sprites and screen-saver](../Lab07/)
+- [Course Lab 06 — VGA controller](../../Lab06/)
+- [Course Lab 07 — sprites and screen-saver](../../Lab07/)
 - [Digilent Nexys 4 DDR resources](https://github.com/Digilent/Nexys4DDR)
 - [Adam Taylor — Space Invaders graphics concepts](https://www.hackster.io/adam-taylor/space-invaders-on-any-arty-board-using-vhdl-and-pmod-vga-1f5161)
 
@@ -43,4 +43,4 @@ HDL source, XDC constraints, architectural block diagram, testbenches and simula
 
 **Important:** Reproduction of Lab 06 color stripes or Lab 07 single-sprite bounce alone does not satisfy the requirements for this project.
 
-See the [general guidelines](../README.md#general-project-guidelines) and [evaluation criteria](../README.md#evaluation-criteria).
+See the [general guidelines](../../README.md#general-project-guidelines) and [evaluation criteria](../../README.md#evaluation-criteria).
