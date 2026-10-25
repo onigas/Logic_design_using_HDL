@@ -21,7 +21,7 @@ The following **17 independent project proposals** link to detailed assignments.
 | 10 | [FPGA-Based Pong / Space Invaders Game](Details/Project-10.md) | 5/5 |
 | 11 | [FPGA-Based Digital Logic Analyzer](Details/Project-11.md) | 5/5 |
 | 12 | [FPGA-Based FIR Digital Filter](Details/Project-12.md) | 4/5 |
-| 13 | [PWM Audio Signal Processor](Details/Project-13.md) | 4/5 |
+| 13 | [PWM Audio Signal Processor](Details/Project-13.md) | 5/5 |
 | 14 | [Digital Security System with Access Code](Details/Project-14.md) | 3/5 |
 | 15 | [FPGA-Based Digital Piano](Details/Project-15.md) | 4/5 |
 | 16 | [FPGA-Based Digital Piano with Recording and Playback](Details/Project-16.md) | 5/5 |
