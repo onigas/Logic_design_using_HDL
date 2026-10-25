@@ -12,7 +12,7 @@ The following **17 independent project proposals** link to detailed assignments.
 | 1 | [Digital Clock with Seven-Segment Display](Details/Project-01.md) | 3/5 |
 | 2 | [Digital Alarm Clock with UART Interface](Details/Project-02.md) | 4/5 |
 | 3 | [Advanced Digital Clock with VGA Display and Multiple Alarms](Details/Project-03.md) | 5/5 |
-| 4 | [Multichannel PWM Generator](Details/Project-04.md) | To be specified |
+| 4 | [Multichannel RGB LED Controller with PWM](Details/Project-04.md) | 4/5 |
 | 5 | [Traffic Intersection with Pedestrian Crossings and VGA Monitoring](Details/Project-05.md) | To be specified |
 | 6 | [SPI Interface for the ADXL362 Accelerometer](Details/Project-06.md) | To be specified |
 | 7 | [Interactive VGA Graphics and Text Display](Details/Project-07.md) | 3/5 |
