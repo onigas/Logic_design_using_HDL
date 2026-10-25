@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430">
+<rect width="1050" height="430" rx="15" fill="#f7f9fc"/>
+<text x="525" y="35" text-anchor="middle" font-size="24" font-family="Arial" font-weight="bold" fill="#19324c">Interactive PWM Audio Synthesizer — HDL Block Diagram</text>
+<g font-family="Arial" text-anchor="middle" font-size="16" fill="#172c44">
+<rect x="30" y="84" width="185" height="58" rx="9" fill="#e3eefb" stroke="#47739d"/><text x="122" y="108">Phase Accumulator</text><text x="122" y="127" font-size="13">(frequency control)</text>
+<rect x="264" y="56" width="160" height="59" rx="9" fill="#e7f4f2" stroke="#3a887c"/><text x="344" y="79">Sine Lookup</text><text x="344" y="99" font-size="13">ROM / LUT</text>
+<rect x="264" y="143" width="160" height="59" rx="9" fill="#e7f4f2" stroke="#3a887c"/><text x="344" y="166">Square Wave</text><text x="344" y="185" font-size="13">Phase comparator</text>
+<rect x="464" y="95" width="110" height="68" rx="9" fill="#fff0d8" stroke="#b48135"/><text x="519" y="121">Waveform</text><text x="519" y="141">MUX</text>
+<rect x="615" y="95" width="133" height="68" rx="9" fill="#fff0d8" stroke="#b48135"/><text x="681" y="121">Amplitude</text><text x="681" y="141">Scaling</text>
+<rect x="792" y="95" width="103" height="68" rx="9" fill="#f1e9f9" stroke="#8662ad"/><text x="843" y="121">PWM</text><text x="843" y="141">Generator</text>
+<rect x="927" y="95" width="106" height="68" rx="9" fill="#e4ebf3" stroke="#6a7e98"/><text x="980" y="122">Audio</text><text x="980" y="142">Output Jack</text>
+<rect x="30" y="268" width="235" height="82" rx="9" fill="#fff" stroke="#7e91a6"/><text x="147" y="291">SW[4:3] Frequency</text><text x="147" y="314">SW[2] Waveform</text><text x="147" y="337">SW[1:0] Volume</text>
+</g>
+<g stroke="#4a6580" stroke-width="2.5" fill="none">
+<path d="M215 113 H238 V85 H264"/><path d="M238 113 V173 H264"/>
+<path d="M424 85 H444 V114 H464"/><path d="M424 173 H444 V144 H464"/>
+<path d="M574 129 H615 M748 129 H792 M895 129 H927"/>
+<path d="M147 268 V234 H122 V142"/><path d="M204 268 V224 H519 V163"/><path d="M237 268 V245 H681 V163"/>
+</g>
+<g font-family="Arial" font-size="15" fill="#4f6277">
+<text x="525" y="386" text-anchor="middle">SW0–SW4 select sound characteristics at run time; no FPGA reprogramming needed.</text>
+<text x="525" y="410" text-anchor="middle">Connect suitable headphones or powered speakers to the board audio jack.</text>
+</g>
+</svg>
