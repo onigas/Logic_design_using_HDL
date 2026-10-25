@@ -15,7 +15,7 @@ The 15 proposals below are independent projects. Click a title to open its assig
 | 4 | [Multichannel PWM Generator](Project-04.md) | To be specified |
 | 5 | [Intelligent Traffic Light Controller](Project-05.md) | To be specified |
 | 6 | [SPI Interface for the ADXL362 Accelerometer](Project-06.md) | To be specified |
-| 7 | [VGA Graphics Generator](Project-07.md) | To be specified |
+| 7 | [Interactive VGA Graphics System](Project-07.md) | To be specified |
 | 8 | [FPGA-Based Pong / Space Invaders Game](Project-08.md) | To be specified |
 | 9 | [FPGA-Based Digital Logic Analyzer](Project-09.md) | To be specified |
 | 10 | [FPGA-Based FIR Digital Filter](Project-10.md) | To be specified |
