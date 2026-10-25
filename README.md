@@ -4,6 +4,51 @@ Laboratory materials for the **Logic Design using HDL** course at the University
 
 The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board and **AMD/Xilinx Vivado 2022.2**. The repository contains source files, constraints, simulation testbenches where required, memory initialization data, and Tcl scripts that recreate the Vivado projects from source.
 
+## Student projects
+
+The [Projects](Projects/README.md) folder contains the proposed 4–5 week FPGA projects, their assignment pages, and grade-specific variants.
+
+## General Project Guidelines
+
+Students may reproduce and adapt existing open-source FPGA projects, reference designs, or tutorials. The primary objective is to understand digital hardware architectures and develop practical HDL design skills.
+
+Each project should include:
+
+- A functional HDL implementation running on the Nexys 4 DDR board.
+- An explanation of the main design modules, datapath, control logic, and finite state machines, where applicable.
+- Functional verification through simulation and hardware testing.
+- A brief technical report including design architecture, simulation results, and FPGA resource utilization.
+- At least one modification or extension of the reference implementation, whenever feasible.
+
+The use of MicroBlaze or other embedded processors is not required. The focus is on digital hardware design.
+
+## Recommended Project Schedule
+
+| Week | Activities | Expected Deliverables |
+| --- | --- | --- |
+| 1 | Study the selected project, review reference designs, identify hardware modules, and prepare the architecture. | Block diagram and implementation plan |
+| 2 | Implement or adapt HDL modules, develop testbenches, and perform functional simulations. | HDL source files and simulation results |
+| 3 | Integrate the design, run synthesis and implementation, and test it on the Nexys 4 DDR. | Working FPGA prototype |
+| 4 | Debug the system, validate its functionality, and measure FPGA resource utilization. | Functional demonstration and technical results |
+| 5 | Implement optional extensions, finalize documentation, and present the project. | Final report, source code, and demonstration |
+
+For four-week projects, the validation and final presentation activities may be combined.
+
+## Evaluation Criteria
+
+| Criterion | Weight |
+| --- | ---: |
+| Functional implementation on FPGA | 35% |
+| Understanding and explanation of the HDL architecture | 25% |
+| Simulation and hardware verification | 15% |
+| Project documentation | 15% |
+| Modifications or extensions | 10% |
+| **Total** | **100%** |
+
+Reproducing a reference design is acceptable, provided that students can explain its operation, identify the important modules, demonstrate the system, and document the implementation. Original improvements are encouraged but should not dominate the evaluation.
+
+For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric above is used to evaluate performance **within the selected variant**; it does not override that variant's maximum grade.
+
 ## Laboratories
 
 ### Lab 04 — FPGA memories
