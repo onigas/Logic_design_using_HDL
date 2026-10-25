@@ -5,7 +5,10 @@
 **Development environment:** Vivado 2022.2  
 **Suggested duration:** 4–5 weeks
 
-The **17 proposals** below are independent projects. Click a title to open the assignment. Maximum grades are on a **1–5 scale**. Students may reproduce and adapt open-source HDL reference implementations.
+There are **17 independent project proposals**. Select **Show all 17 projects** to view the titles, maximum grades, and assignment links. Students may reproduce and adapt open-source HDL reference implementations.
+
+<details>
+<summary><strong>Show all 17 projects</strong></summary>
 
 | No. | Project title | Maximum grade |
 | ---: | --- | --- |
@@ -26,6 +29,8 @@ The **17 proposals** below are independent projects. Click a title to open the a
 | 15 | [FPGA-Based Digital Piano](Project-15.md) | 4/5 |
 | 16 | [FPGA-Based Digital Piano with Recording and Playback](Project-16.md) | 5/5 |
 | 17 | [FPGA-Based Robotic Arm Controller](Project-17.md) | 5/5 (proposed) |
+
+</details>
 
 ## Notes
 
