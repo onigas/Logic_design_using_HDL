@@ -5,7 +5,7 @@
 **Platform:** Digilent Nexys 4 DDR / Nexys A7-100T  
 **Language:** VHDL or Verilog  
 **Duration:** 4–5 weeks  
-**Maximum grade:** 5/5 (proposed)
+**Maximum grade:** **5/5**
 
 ## Project Description
 
