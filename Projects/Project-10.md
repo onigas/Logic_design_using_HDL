@@ -26,7 +26,7 @@ Implement a signed fixed-point finite impulse response filter in synthesizable H
 
 ## References and Source Projects
 
-- [Xilinx DSP Primer — course-provided archive](https://www.zynqbook.com/)
+- Xilinx DSP Primer — instructor-provided archive (separate from The Zynq Book)
 - [16-tap Verilog FIR reference](https://github.com/rombarak/FIR-Filter)
 - [Pipelined FIR HDL example](https://github.com/Mounika2198/fpga-projects/tree/main/03_fir_filter)
 - [Adam Taylor projects](https://www.hackster.io/adam-taylor/projects)
