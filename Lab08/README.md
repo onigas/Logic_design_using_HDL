@@ -10,6 +10,7 @@ is required. These scripts target the 100T board variant.
 | L8.1 Transmitter | `L8.1_TX` | `create_project.tcl` | `L8_1_TX.xpr` |
 | L8.2 Receiver | `L8.2_RX` | `create_project.tcl` | `L8_2_RX.xpr` |
 | L8.3 Echo | `L8.3_Echo` | `create_project.tcl` | `L8_3_Echo.xpr` |
+| L8.4 HC-06 Bluetooth + LED Control | `L8.4_Bluetooth_LED` | `create_project.tcl` | `L8_4_Bluetooth_LED.xpr` |
 
 ## Generate one project in the Vivado GUI
 
@@ -24,7 +25,7 @@ The generated project opens immediately. Click **Generate Bitstream** and
 program the board with **Hardware Manager**. Each exercise's README contains
 the exact controls and hardware check.
 
-To create all three projects, with no project currently open:
+To create all four projects, with no project currently open:
 
 ```tcl
 source {C:/Labs/Logic_design_using_HDL/Lab08/create_all_projects.tcl}
@@ -62,23 +63,25 @@ its generated projects.
 - Program the selected design, then press and release **BTNR** to reset it.
 - Configure the serial terminal for **9600 baud, 8N1, no flow control**.
 - For echo, disable the terminal's local echo.
-- **BTNC** sends the switch byte in L8.1; **BTNR** resets all three designs.
-- `RxD` uses FPGA pin **C4**; `TxD` uses FPGA pin **D4**.
+- **BTNC** sends the switch byte in L8.1; **BTNR** resets every design.
+- **L8.1–L8.3 USB UART:** `RxD` = C4, `TxD` = D4.
+- **L8.4 HC-06 on JB:** HC-06 TX -> FPGA `RxD` = **H14/JB4**; FPGA `TxD` = **G16/JB3** -> HC-06 RX.
+- **L8.4 digit control:** phone ASCII `0`..`9` selects LED0..LED9 (one at a time); uppercase `X` turns them all off. `BTNR` resets the LEDs; echo remains active.
 
 The original design uses four rightmost seven-segment digits. Its segment
 order is `a_to_g[6:0] = {A,B,C,D,E,F,G}`.
 
 ## Scope and verification
 
-The original RTL is retained, including `clkdiv`, the 25 MHz / approximately
+For L8.1–L8.3, the original RTL is retained, including `clkdiv`, the 25 MHz / approximately
 190 Hz divided clocks, the existing UART state machines, asynchronous control
-style, and 9600-baud counters. No simulation sources or simulation tasks are
+style, and 9600-baud counters. L8.4 preserves those modules and adds only the ASCII LED control in its top module and JB/LED XDC assignments. No simulation sources or simulation tasks are
 included. See `SOURCE_NOTES.md` for the echo-source check and slide correction.
 
 RTL parsing/elaboration, synthesis checks, pin assignments, and Tcl file
 references were checked during packaging. Vivado 2022.2 and an FPGA board are
 not available in the preparation environment, so Vivado implementation,
-bitstream generation, and on-board operation must be checked locally.
+bitstream generation, and on-board operation of the revised L8.4 LED0/X control must be checked locally. The instructor reports that the HC-06 Bluetooth echo on H14/G16 and previous LED1–LED9 control already work.
 
 ## Sources
 
