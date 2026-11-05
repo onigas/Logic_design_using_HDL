@@ -25,7 +25,8 @@ set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { btn[3]
 set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { RxD }]; #IO_L7P_T1_AD6P_35 Sch=jb[4]
 set_property -dict { PACKAGE_PIN G16   IOSTANDARD LVCMOS33 } [get_ports { TxD }]; #IO_L11N_T1_SRCC_35 Sch=jb[3]
 
-# One-hot onboard LED control: ASCII 1..9 -> LED1..LED9.
+# One-hot onboard LED control: ASCII 0..9 -> LED0..LED9; X clears.
+set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { LED[0] }]; # onboard LED0
 set_property -dict { PACKAGE_PIN K15   IOSTANDARD LVCMOS33 } [get_ports { LED[1] }]; # onboard LED1
 set_property -dict { PACKAGE_PIN J13   IOSTANDARD LVCMOS33 } [get_ports { LED[2] }]; # onboard LED2
 set_property -dict { PACKAGE_PIN N14   IOSTANDARD LVCMOS33 } [get_ports { LED[3] }]; # onboard LED3
