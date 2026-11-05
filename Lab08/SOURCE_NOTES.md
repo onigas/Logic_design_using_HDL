@@ -51,3 +51,13 @@ modified in this package.
 The basic receiver's original asynchronous `rdrf_clr` control style is
 retained. Portable synthesis reports warnings about this style; these
 checks do not establish Vivado implementation or board functionality.
+
+## L8.4 Bluetooth LED extension (2026-11-05)
+
+The new standalone exercise copies the original L8.3 UART, clock-dividing,
+control, and seven-segment modules without changing them. Its new top-level
+adds a registered one-hot decoder for received ASCII digits 1..9 on LED1..9,
+with 0 to clear all LEDs, while maintaining UART echo. The HC-06 UART uses
+FPGA input H14 (JB4) and output G16 (JB3), as tested for the echo by the
+instructor. The LED enhancement is not yet verified on the physical FPGA.
+No HDL simulation is added, consistent with the Lab08 policy.

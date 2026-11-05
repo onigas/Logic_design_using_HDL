@@ -88,6 +88,7 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 | [L8.1_TX](Lab08/L8.1_TX/) | Transmit switch data over UART |
 | [L8.2_RX](Lab08/L8.2_RX/) | Receive UART bytes and display the received value |
 | [L8.3_Echo](Lab08/L8.3_Echo/) | Receive a UART byte and transmit it back |
+| [L8.4_Bluetooth_LED](Lab08/L8.4_Bluetooth_LED/) | Echo HC-06 Bluetooth bytes on JB and select onboard LEDs with ASCII digits |
 
 ### Lab 09 — Pulse Width Modulation
 
@@ -110,6 +111,7 @@ Logic_design_using_HDL/
 │   ├── L8.1_TX/
 │   ├── L8.2_RX/
 │   ├── L8.3_Echo/
+│   ├── L8.4_Bluetooth_LED/
 │   └── README.md
 ├── Lab09/
 │   ├── L9.1_PWM_LED/
