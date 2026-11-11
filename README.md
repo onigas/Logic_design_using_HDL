@@ -105,32 +105,6 @@ Acquire signed XYZ data from the onboard ADXL362 using a Verilog SPI controller 
 
 [Laboratory handout (PDF)](Lab10/Laboratory_10.pdf) · [Vivado project sources and test instructions](Lab10/)
 
-## Repository structure
-
-```text
-Logic_design_using_HDL/
-├── Lab04/
-├── Lab05/
-├── Lab06/
-├── Lab07/
-├── Lab08/
-│   ├── L8.1_TX/
-│   ├── L8.2_RX/
-│   ├── L8.3_Echo/
-│   ├── L8.4_Bluetooth_LED/
-│   └── README.md
-├── Lab09/
-│   ├── L9.1_PWM_LED/
-│   ├── L9.2_DC_Motor/
-│   ├── L9.3_Knight_Rider/
-│   ├── L9.4_PWM_Audio/
-│   ├── create_all_projects.tcl
-│   └── README.md
-├── Lab10/
-├── .gitignore
-└── README.md
-```
-
 ## Recreating a Vivado project
 
 Each exercise is self-contained and has its own `create_project.tcl` file. No generated Vivado project files are stored in the repository.
