@@ -105,6 +105,12 @@ Acquire signed XYZ data from the onboard ADXL362 using a Verilog SPI controller 
 
 [Laboratory handout (PDF)](Lab10/Laboratory_10.pdf) · [Vivado project sources and test instructions](Lab10/)
 
+### Lab 11 — I²C master design and ADT7420 temperature acquisition
+
+Implement the I²C transaction sequencer for the onboard ADT7420, verify ACK/NACK handling in simulation, and read signed temperature records over UART on the Nexys4 DDR.
+
+[Laboratory handout (PDF)](Lab11/Laboratory_11.pdf) · [Vivado project and test instructions](Lab11/)
+
 ## Recreating a Vivado project
 
 Each exercise is self-contained and has its own `create_project.tcl` file. No generated Vivado project files are stored in the repository.

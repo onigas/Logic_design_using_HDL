@@ -1,0 +1,6 @@
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS33} [get_ports CLK100MHZ]
+create_clock -name sys_clk -period 10 [get_ports CLK100MHZ]
+set_property -dict {PACKAGE_PIN C12 IOSTANDARD LVCMOS33} [get_ports CPU_RESETN]
+set_property -dict {PACKAGE_PIN D4 IOSTANDARD LVCMOS33} [get_ports UART_RXD_OUT]
+set_property -dict {PACKAGE_PIN C14 IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports TMP_SCL]
+set_property -dict {PACKAGE_PIN C15 IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports TMP_SDA]
