@@ -1,0 +1,12 @@
+; Nexys4 DDR: SW[i] -> LED[i], for all 16 switches.
+CONSTANT SW_LOW, 00
+CONSTANT SW_HIGH, 01
+CONSTANT LED_LOW, 00
+CONSTANT LED_HIGH, 01
+ADDRESS 000
+loop: INPUT s0, SW_LOW
+      OUTPUT s0, LED_LOW
+      INPUT s1, SW_HIGH
+      OUTPUT s1, LED_HIGH
+      JUMP loop
+

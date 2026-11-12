@@ -1,0 +1,7 @@
+vivado/
+.Xil/
+output/
+*.log
+*.jou
+*.backup.*
+firmware/*.fmt

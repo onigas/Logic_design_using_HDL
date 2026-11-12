@@ -4,6 +4,10 @@ Laboratory materials for the **Logic Design using HDL** course at the University
 
 The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board and **AMD/Xilinx Vivado 2022.2**. The repository contains source files, constraints, simulation testbenches where required, memory initialization data, and Tcl scripts that recreate the Vivado projects from source.
 
+## Practical lecture
+
+[Practical lecture](Practical-lecture/) introduces PicoBlaze switch-to-LED control on Nexys4 DDR, including step-by-step assembly of the PSM program into Block RAM program memory, simulation, implementation and board programming in Vivado 2022.2.
+
 ## Student projects
 
 The [Projects](Projects/README.md) folder contains the proposed 4–5 week FPGA projects, their assignment pages, and grade-specific variants.
