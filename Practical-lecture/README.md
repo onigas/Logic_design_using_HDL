@@ -22,18 +22,22 @@ Keep the original copyright and license notices in the Xilinx files. They remain
 
 ```mermaid
 flowchart LR
-    SW[16 switches] --> SYNC[Two stage synchronizers]
-    SYNC --> INPUT[8 bit input selection]
-    INPUT --> CPU[PicoBlaze KCPSM6]
-    CPU --> OUTPUT[Two 8 bit LED registers]
-    OUTPUT --> LED[16 LEDs]
-    CPU -->|Address and enable| ROM[1024 x 18 program ROM]
-    ROM -->|18 bit instruction| CPU
+    SWITCHES["SWITCHES<br/>Input port"] -->|"in_port [7:0]"| CPU["KCPSM6<br/>PicoBlaze processor"]
+    CPU -->|"out_port [7:0]"| LEDS["LEDS<br/>Output port"]
+    CPU -->|"address [11:0], bram_enable"| MEMORY["Program memory<br/>Firmware ROM"]
+    MEMORY -->|"instruction [17:0]"| CPU
 ```
 
-The 100 MHz board oscillator clocks the whole system. PicoBlaze executes the instructions stored in the ROM. It reads switches through `in_port` and writes LED values through `out_port`.
+The system has four main blocks:
 
-A switch can change at any point relative to the clock. Registers `sw_meta` and `sw_sync` synchronize each input before the processor reads it. This does not debounce switches or make a multi-bit bus an atomic sample; neither is needed for displaying stable switch states.
+- **KCPSM6** is the processor. It repeatedly fetches instructions from the program memory and executes them.
+- **Program memory** stores the firmware generated from `switch_led.psm`. KCPSM6 supplies the instruction address and memory enable; the ROM returns the 18-bit instruction. This is the program to execute, not the switch data.
+- **SWITCHES** is the input port block. It presents a selected group of eight switch states on `in_port[7:0]`. An `INPUT` instruction copies that byte into a processor register.
+- **LEDS** is the output port block. An `OUTPUT` instruction places a byte on `out_port[7:0]`. The selected LED register captures it when `write_strobe` is asserted and holds it until the next write.
+
+The data path is **SWITCHES → KCPSM6 → LEDS**. The firmware tells the processor to repeat the read-and-write sequence. There is no direct connection that copies the switches to the LEDs without executing the program.
+
+The figure shows the main data and instruction connections. The shared 100 MHz clock, reset and port-selection control signals are omitted for clarity. In the hardware, `port_id[7:0]` selects the lower or upper group of eight switches or LEDs. Input synchronization is included inside the SWITCHES block; output registers are included inside the LEDS block.
 
 PicoBlaze has 8-bit data ports. Therefore, the 16 inputs and outputs are split into two groups:
 
@@ -91,7 +95,7 @@ The supplied `ROM_form.v` is the Xilinx **7-series 1K** template, identified int
 
 ### 4.2 Run the assembler
 
-Open PowerShell and run:
+Open PowerShell and run the following commands, replacing the example path with the location of your lecture folder:
 
 ```powershell
 cd 'C:/FPGA/Practical-lecture/firmware'
@@ -171,26 +175,43 @@ The LED registers change only when `write_strobe` is asserted. Port `00` writes 
 
 ## 6 Create the Vivado project
 
-### Script method
+### 6.1 Start a new RTL project
 
-Open Vivado 2022.2. In the **Tcl Console**, run:
+1. Open **Vivado 2022.2** and select **Create Project**.
+2. Click **Next**. Enter `switch_led` as the project name and choose a writable project location. Keep **Create project subdirectory** selected.
+3. Click **Next** and choose **RTL Project**. Leave **Do not specify sources at this time** unchecked so that you can add the files in the wizard.
 
-```tcl
-source {C:/FPGA/Practical-lecture/tcl/create_project.tcl}
-```
+### 6.2 Add the design sources
 
-The script creates `vivado/switch_led.xpr`, selects `xc7a100tcsg324-1`, adds the sources and constraints, and selects the design and simulation top modules. It recreates the generated project, so keep your source edits in the lecture folders.
+1. On **Add Sources**, choose **Add Files**.
+2. Select these three files:
+   - `rtl/kcpsm6.v` — the processor.
+   - `rtl/switch_led_top.v` — the top-level connections and input/output logic.
+   - `firmware/switch_led.v` — the ROM generated in Step 4.
+3. Set **Target language** to **Verilog**.
+4. Leave **Copy sources into project** unchecked. Vivado will use the original files, so reassembling the firmware updates the same ROM file used by the project.
+5. Click **Next**. If an **Add Existing IP** page appears, continue without adding IP.
 
-### Manual method
+Do not add `ROM_form.v`, `switch_led.psm`, `switch_led.hex` or `kcpsm6.exe` as HDL design sources. The generated `switch_led.v` already contains the memory contents.
 
-1. Select **Create Project** and choose an RTL project.
-2. Select part **xc7a100tcsg324-1**. Board definition files are unnecessary.
-3. Add these three design sources: `rtl/kcpsm6.v`, `rtl/switch_led_top.v`, and `firmware/switch_led.v`.
-4. Add `constraints/nexys4_ddr.xdc` as the constraints file.
-5. Add `sim/tb_switch_led.sv` as a simulation source.
-6. Set `switch_led_top` as the design top and `tb_switch_led` as the simulation top.
+### 6.3 Add constraints and select the FPGA
 
-Do not add the assembler executable, PSM source or ROM template as HDL sources.
+1. On **Add Constraints**, select **Add Files** and choose `constraints/nexys4_ddr.xdc`.
+2. Leave **Copy constraints into project** unchecked and click **Next**.
+3. On **Default Part**, use the **Parts** tab and search for `xc7a100tcsg324-1`.
+4. Select that exact part: Artix-7, XC7A100T, CSG324 package, speed grade -1.
+5. Click **Next**, review the summary and click **Finish**.
+
+### 6.4 Select the top module and add the testbench
+
+1. In the **Sources** window, expand **Design Sources**.
+2. Right-click `switch_led_top` and choose **Set as Top** if it is not already the top module.
+3. In **Flow Navigator**, select **Add Sources**.
+4. Choose **Add or create simulation sources**, then **Next**.
+5. Click **Add Files**, select `sim/tb_switch_led.sv`, leave copying unchecked and click **Finish**.
+6. In **Sources > Simulation Sources**, right-click `tb_switch_led` and choose **Set as Top** if needed.
+
+The design top is `switch_led_top`; the simulation top is `tb_switch_led`. Save the project. You can reopen it later by selecting its `switch_led.xpr` file.
 
 ## 7 Check the board constraints
 
@@ -202,7 +223,7 @@ Timing exceptions cover asynchronous switch inputs only up to their first synchr
 
 ## 8 Simulate the system
 
-Choose **Run Simulation > Run Behavioral Simulation**, then **Run All**. Alternatively, enter `run all` in the simulator Tcl Console.
+In **Flow Navigator**, choose **Run Simulation > Run Behavioral Simulation**. Once the waveform window opens, click **Run All** on the simulation toolbar. Wait for the testbench to finish.
 
 The testbench uses the real processor and generated ROM. It tests individual switches, inverted one-bit patterns, all-on and alternating patterns, 100 random combinations, and reset followed by restart.
 
@@ -218,19 +239,22 @@ The test allows 40 clock cycles after each switch change. This covers synchroniz
 
 ## 9 Generate the bitstream
 
-Run **Synthesis**, then **Implementation**, then **Generate Bitstream**. The GUI build produces:
+1. Close the simulation view when you have checked the PASS result.
+2. In **Flow Navigator**, click **Run Synthesis**. Accept the launch settings and wait for completion.
+3. In the completion dialog, choose **Run Implementation** and click **OK**.
+4. When implementation completes, choose **Open Implemented Design**. Check **Reports > Timing > Report Timing Summary** and confirm that the timing constraints are met. You can also inspect **Report Utilization** and **Report DRC** from the Reports menu.
+5. In **Flow Navigator**, click **Generate Bitstream** and wait for successful completion.
+6. In the completion dialog, choose **Open Hardware Manager**.
+
+Vivado writes the programming file inside the project directory:
 
 ```text
-vivado/switch_led.runs/impl_1/switch_led_top.bit
+<project-directory>/switch_led.runs/impl_1/switch_led_top.bit
 ```
 
-To create the project, simulate and build in one operation, use:
+Here, `<project-directory>` is the folder containing `switch_led.xpr`. For example, if that file is `C:/FPGA/switch_led/switch_led.xpr`, the bitstream is `C:/FPGA/switch_led/switch_led.runs/impl_1/switch_led_top.bit`.
 
-```tcl
-source {C:/FPGA/Practical-lecture/tcl/build_and_test.tcl}
-```
-
-The script also copies the bitstream to `output/switch_led_top.bit` and creates timing, utilization and DRC reports. Inspect the simulation result as well as the build completion message.
+After editing and assembling the firmware again, return to Vivado and repeat synthesis, implementation and bitstream generation. If Vivado asks to reset an out-of-date run, accept so that the new ROM contents are included.
 
 For the tested build, timing passed at 100 MHz with 0.704 ns setup slack and 0.073 ns hold slack. Resources were 116 LUTs, 130 registers and one RAMB18E1. DRC reported no errors and one `CFGBVS-1` warning about unspecified configuration-bank voltage properties; bitstream generation completed. The original core also produces legacy syntax and unused-logic warnings.
 
@@ -239,13 +263,11 @@ For the tested build, timing passed at 100 MHz with 0.704 ns setup slack and 0.0
 1. Connect the USB cable to the board's **PROG/UART** connector and turn the board on.
 2. Open **Hardware Manager > Open Target > Auto Connect**.
 3. Select the `xc7a100t` device and choose **Program Device**.
-4. Browse to `output/switch_led_top.bit`, or the GUI build path above, and click **Program**.
+4. In the **Bitstream file** field, select `<project-directory>/switch_led.runs/impl_1/switch_led_top.bit` and click **Program**.
 5. With all switches OFF, check that all 16 LEDs are off.
 6. Set SW0 ON and check LED0. Repeat for each numbered switch.
 7. Set several switches ON together and check the corresponding LEDs.
 8. Hold **CPU RESET** to clear the LEDs. Release it to resume displaying switch states.
-
-The supplied `tcl/program_board.tcl` offers the same programming operation for one connected Artix-7 target. The GUI method lets you explicitly select a board when several are connected.
 
 Programming through JTAG is volatile. Reload the bitstream after removing power. Configuration flash programming is outside this exercise.
 
