@@ -10,7 +10,7 @@ The current laboratories target the **Nexys4 DDR / Nexys A7-100T** FPGA board an
 
 ## Student projects
 
-The [Projects](Projects/README.md) folder contains the proposed 4–5 week FPGA projects, their assignment pages, and grade-specific variants.
+The [Projects](Projects/README.md) folder contains the proposed 4â€“5 week FPGA projects, their assignment pages, and grade-specific variants.
 
 ## General Project Guidelines
 
@@ -55,15 +55,15 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 
 ## Laboratories
 
-### Lab 04 — FPGA memories
+### Lab 04 â€” FPGA memories
 
 | Project | Topic |
 | --- | --- |
-| [L4.1_hdl_rom](Lab04/L4.1_hdl_rom/) | An 8 × 8 ROM described in HDL, with output on LEDs |
-| [L4.2_distributed_rom](Lab04/L4.2_distributed_rom/) | A 16 × 8 ROM using Distributed Memory Generator |
-| [L4.3_block_rom](Lab04/L4.3_block_rom/) | An 8 × 16 Block ROM with hexadecimal seven-segment display |
+| [L4.1_hdl_rom](Lab04/L4.1_hdl_rom/) | An 8 Ã— 8 ROM described in HDL, with output on LEDs |
+| [L4.2_distributed_rom](Lab04/L4.2_distributed_rom/) | A 16 Ã— 8 ROM using Distributed Memory Generator |
+| [L4.3_block_rom](Lab04/L4.3_block_rom/) | An 8 Ã— 16 Block ROM with hexadecimal seven-segment display |
 
-### Lab 05 — Arithmetic Logic Unit
+### Lab 05 â€” Arithmetic Logic Unit
 
 | Project | Topic |
 | --- | --- |
@@ -71,21 +71,21 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 | [L5.2_alu_display](Lab05/L5.2_alu_display/) | Four-bit ALU with hexadecimal seven-segment display |
 | [L5.3_memory_alu](Lab05/L5.3_memory_alu/) | Two ROM reads, four-bit addition, and hexadecimal display |
 
-### Lab 06 — VGA controller
+### Lab 06 â€” VGA controller
 
 | Project | Topic |
 | --- | --- |
 | [L6.1_stripes_1024x768](Lab06/L6.1_stripes_1024x768/) | VGA timing and alternating red/green horizontal stripes |
 | [L6.2_letters_1024x768](Lab06/L6.2_letters_1024x768/) | Character bitmap from ROM, positioned using switches |
 
-### Lab 07 — VGA sprites and animation
+### Lab 07 â€” VGA sprites and animation
 
 | Project | Topic |
 | --- | --- |
-| [L7_1_sprite_block_rom_1024x768](Lab07/L7_1_sprite_block_rom_1024x768/) | Display a 240 × 160 image from Block ROM at a selectable position |
+| [L7_1_sprite_block_rom_1024x768](Lab07/L7_1_sprite_block_rom_1024x768/) | Display a 240 Ã— 160 image from Block ROM at a selectable position |
 | [L7_2_screen_saver_1024x768](Lab07/L7_2_screen_saver_1024x768/) | Animated sprite that bounces at the screen boundaries |
 
-### Lab 08 — UART serial communication
+### Lab 08 â€” UART serial communication
 
 | Project | Topic |
 | --- | --- |
@@ -94,7 +94,7 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 | [L8.3_Echo](Lab08/L8.3_Echo/) | Receive a UART byte and transmit it back |
 | [L8.4_Bluetooth_LED](Lab08/L8.4_Bluetooth_LED/) | Echo HC-06 Bluetooth bytes on JB and select onboard LEDs with ASCII digits |
 
-### Lab 09 — Pulse Width Modulation
+### Lab 09 â€” Pulse Width Modulation
 
 | Project | Topic |
 | --- | --- |
@@ -102,18 +102,19 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 | [L9.2_DC_Motor](Lab09/L9.2_DC_Motor/) | DC motor speed and direction control using Pmod DHB1 |
 | [L9.3_Knight_Rider](Lab09/L9.3_Knight_Rider/) | Knight Rider LED animation with PWM brightness control |
 | [L9.4_PWM_Audio](Lab09/L9.4_PWM_Audio/) | Sine-wave audio generation using ROM and PWM |
+| [L9.5_RGB_PWM](Lab09/L9.5_RGB_PWM/) | Two independent RGB332 LEDs with shared PWM, limited brightness, and self-checking simulation |
 
-### Lab 10 — ADXL362 accelerometer interface
+### Lab 10 â€” ADXL362 accelerometer interface
 
 Acquire signed XYZ data from the onboard ADXL362 using a Verilog SPI controller and send ASCII records to a PC over UART. The lab includes a self-checking simulation and a Python viewer for live or recorded measurements.
 
-[Laboratory handout (PDF)](Lab10/Laboratory_10.pdf) · [Vivado project sources and test instructions](Lab10/)
+[Laboratory handout (PDF)](Lab10/Laboratory_10.pdf) Â· [Vivado project sources and test instructions](Lab10/)
 
-### Lab 11 — I²C master design and ADT7420 temperature acquisition
+### Lab 11 â€” IÂ²C master design and ADT7420 temperature acquisition
 
-Implement the I²C transaction sequencer for the onboard ADT7420, verify ACK/NACK handling in simulation, and read signed temperature records over UART on the Nexys4 DDR.
+Implement the IÂ²C transaction sequencer for the onboard ADT7420, verify ACK/NACK handling in simulation, and read signed temperature records over UART on the Nexys4 DDR.
 
-[Laboratory handout (PDF)](Lab11/Laboratory_11.pdf) · [Vivado project and test instructions](Lab11/)
+[Laboratory handout (PDF)](Lab11/Laboratory_11.pdf) Â· [Vivado project and test instructions](Lab11/)
 
 ## Recreating a Vivado project
 
@@ -126,7 +127,7 @@ cd <path-to-the-exercise-folder>
 source create_project.tcl
 ```
 
-For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Labs 08-09 create their projects under each exercise's `build/` directory and provide `build_bitstream.tcl` scripts. Lab08 contains no simulation tasks. Lab09 includes a behavioral simulation and `run_simulation.tcl` for L9.1; L9.4 recreates its sine-wave ROM IP from the supplied initialization data.
+For Labs 04-07, the script creates a new `vivado_project/` directory, adds the required HDL and constraint files, generates any required Vivado IP, and selects the correct top module. Labs 08-09 create their projects under each exercise's `build/` directory and provide `build_bitstream.tcl` scripts. Lab08 contains no simulation tasks. Lab09 includes a behavioral simulation and `run_simulation.tcl` for L9.1 and L9.5; L9.4 recreates its sine-wave ROM IP from the supplied initialization data.
 
 You can also run a script from a terminal where Vivado is available in `PATH`, for example:
 

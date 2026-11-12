@@ -4,7 +4,8 @@ Complete RTL sources, board constraints, and Tcl project-generation scripts for
 **Nexys4 DDR / Nexys A7-100T** (`xc7a100tcsg324-1`) and **Vivado 2022.2**.
 
 This package includes **all four exercises** from the original L9 source
-directory, plus the **L9.1 behavioral PWM simulation**.
+directory, plus **L9.5 RGB332 color control** and behavioral simulations for
+**L9.1 and L9.5**.
 
 | Exercise | Folder | Generated project |
 | --- | --- | --- |
@@ -12,6 +13,7 @@ directory, plus the **L9.1 behavioral PWM simulation**.
 | L9.2 DC motor control with Pmod DHB1 | `L9.2_DC_Motor` | `L9_2_DC_Motor.xpr` |
 | L9.3 Knight Rider LED light | `L9.3_Knight_Rider` | `L9_3_Knight_Rider.xpr` |
 | L9.4 PWM audio sine-wave generator | `L9.4_PWM_Audio` | `L9_4_PWM_Audio.xpr` |
+| L9.5 two RGB LEDs with RGB332 PWM | `L9.5_RGB_PWM` | `L9_5_RGB_PWM.xpr` |
 
 ## Generate one project in Vivado
 
@@ -25,7 +27,7 @@ source {C:/Labs/Logic_design_using_HDL/Lab09/L9.1_PWM_LED/create_project.tcl}
 Then click **Generate Bitstream**, or run the exercise's
 `build_bitstream.tcl`.
 
-To create all four projects, including L9.4 and its ROM IP:
+To create all five projects, including L9.4 and its ROM IP:
 
 ```tcl
 source {C:/Labs/Logic_design_using_HDL/Lab09/create_all_projects.tcl}
@@ -47,10 +49,20 @@ The simulation checks the 100 MHz clock / 1 ms PWM period, `SW=97`, zero duty,
 and saturation at full duty. It finishes after approximately 5 ms and prints
 `PASS: L9.1 PWM simulation completed`. L9.2-L9.4 remain hardware exercises.
 
+## Simulate L9.5
+
+```tcl
+source {C:/Labs/Logic_design_using_HDL/Lab09/L9.5_RGB_PWM/run_simulation.tcl}
+```
+
+The self-checking test covers every RGB332 word on each LED independently,
+complementary colors on both LEDs, zero/max duty, reset during PWM and recovery.
+See [L9.5 instructions](L9.5_RGB_PWM/README.md) for pin mapping and board tests.
+
 ## Hardware summary
 
 - Board clock: **100 MHz**.
-- Reset in L9.1-L9.3: **BTNC** (active high).
+- Reset in L9.1-L9.3 and L9.5: **BTNC** (active high).
 - L9.1 uses **SW[7:0]** to set PWM duty and **LED0** as the PWM output.
 - L9.2 uses **SW[7:0]** for motor speed, **SW15** for motor 1 direction,
   **SW14** for motor 2 direction, and the **JA** Pmod header for the DHB1.
@@ -58,6 +70,9 @@ and saturation at full duty. It finishes after approximately 5 ms and prints
 - L9.4 uses **SW[8:0]** to select the sine-wave frequency and the board's
   **3.5 mm audio output (J8)**. Start with decimal `SW=97` for approximately
   1 kHz. Increasing SW lowers the pitch. No external Pmod is needed.
+- L9.5 uses all 16 switches as two RGB332 words for LED16/LED17. One shared
+  8-bit counter provides 390.625 kHz PWM, limited to 127/256 (49.609375%) duty.
+  SW8/SW9 use LVCMOS18; the other switches and RGB outputs use LVCMOS33.
 
 For L9.2, set `SW[7:0]=0` before changing either direction switch. This keeps
 the DHB1 EN inputs low while DIR changes. Restore the duty switches only after
@@ -72,9 +87,9 @@ retained. L9.1-L9.3 retain their 1 kHz PWM; L9.4 retains its 10-bit,
 See `SOURCE_NOTES.md` for the required L9.3 RTL correction and presentation
 notes. Keep the L9.1 simulation slides (11-12).
 
-Vivado 2022.2 and the physical FPGA/Pmod hardware are not available in this
-preparation environment, so synthesis, implementation, bitstream generation,
-and on-board operation must be verified locally.
+The original L9.1-L9.4 preparation did not include Vivado or hardware
+validation. L9.5 validation is documented in its README. Physical FPGA/Pmod
+operation must be verified on the board.
 
 ## Original material
 
