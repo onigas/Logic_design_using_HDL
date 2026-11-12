@@ -292,7 +292,7 @@ The original five-instruction version has passed simulation, implementation and 
 
 ## 13 Update the program memory with JTAG Loader
 
-This optional procedure follows **E6.pdf, slides 60–63**. It lets you replace the PicoBlaze firmware in the FPGA's Block RAM while keeping the implemented processor, ports and wiring unchanged.
+JTAG Loader lets you replace the PicoBlaze firmware in the FPGA's Block RAM while keeping the implemented processor, ports and wiring unchanged.
 
 ### 13.1 Understand the two programming operations
 
@@ -308,9 +308,9 @@ With JTAG Loader, the update cycle becomes **edit PSM → assemble → load HEX 
 **The basic project supplied in this lecture does not yet include JTAG Loader.** Its simple 1K ROM template has no `C_JTAG_LOADER_ENABLE` parameter or `rdl` output. Adding a parameter to that file alone cannot create the missing circuit.
 
 1. Keep a copy of the working basic project.
-2. Obtain the KCPSM6 **JTAG Loader compatible Verilog ROM template for Vivado and 7-series devices** from the KCPSM6 package. The vendor template inspected for this procedure identifies itself as `ROM_form_JTAGLoader_Vivado_2June14.v`.
+2. Obtain the KCPSM6 **JTAG Loader compatible Verilog ROM template for Vivado and 7-series devices** from the KCPSM6 package. Use the vendor template identified as `ROM_form_JTAGLoader_Vivado_2June14.v`.
 3. Use that template as `firmware/ROM_form.v` in place of the simple template, then assemble `switch_led.psm` again as described in Step 4.
-4. Check that the new generated `switch_led.v` exposes `C_FAMILY`, `C_RAM_SIZE_KWORDS`, `C_JTAG_LOADER_ENABLE` and the `rdl` output. The inspected vendor template includes the `jtag_loader_6` support module.
+4. Check that the new generated `switch_led.v` exposes `C_FAMILY`, `C_RAM_SIZE_KWORDS`, `C_JTAG_LOADER_ENABLE` and the `rdl` output. This vendor template includes the `jtag_loader_6` support module.
 5. In `switch_led_top.v`, replace the original ROM instance with the following instance and add the two wires:
 
 ```verilog
@@ -334,15 +334,15 @@ switch_led #(
 7. In the LED register process, use `if (processor_reset)` instead of `if (reset)` so that the LEDs are cleared during a firmware load as well as during a board reset.
 8. Through the normal Vivado interface, simulate the modified design, run synthesis and implementation, generate a new bitstream, and program the FPGA as in Steps 8–10.
 
-Set `C_JTAG_LOADER_ENABLE` in the ROM instance, as shown, so that reassembling the program does not discard your selection. The slide's `C_JTAG_LOADER_ENABLE => 1` notation means “enable the loader”; the Verilog parameter override syntax is `.C_JTAG_LOADER_ENABLE(1)`.
+Set `C_JTAG_LOADER_ENABLE` in the ROM instance, as shown, so that reassembling the program does not discard your selection. The Verilog parameter override `.C_JTAG_LOADER_ENABLE(1)` enables the loader.
 
 When enabled, the vendor template adds a boundary-scan interface using a **BSCAN primitive** (`BSCANE2` for 7-series) and connects the loader to the program BRAM. The processor reads instructions through its normal memory interface; the loader accesses the memory through the additional interface. The memory still acts as program ROM for the processor, but its contents can now be written through JTAG.
 
-This example keeps a 1K memory, so executable instructions must fit in addresses `000` through `3FF`. The lecture screenshot uses a 2K memory, so its displayed address width and written-word count differ.
+This example keeps a 1K memory, so executable instructions must fit in addresses `000` through `3FF`.
 
 ### 13.3 Prepare the PC tools
 
-The legacy loader demonstrated in the slides is `JTAG_Loader_Win7_64.exe`. The slides use the **ISE Design Suite 64 bit Command Prompt** because the loader depends on components supplied with ISE; Vivado alone is not sufficient for that demonstrated setup.
+This procedure uses the legacy `JTAG_Loader_Win7_64.exe` utility. Run it from the **ISE Design Suite 64 bit Command Prompt** because it depends on components supplied with ISE; Vivado alone is not sufficient for this setup.
 
 Keep the loader executable and its supplied runtime files together in a `JTAG_Loader` folder. Use a compatible ISE installation and cable drivers. The historical executable name does not establish compatibility with every current Windows installation.
 
@@ -374,7 +374,7 @@ cd 'C:/FPGA/Practical-lecture/firmware'
 ./kcpsm6.exe switch_led.psm
 ```
 
-Check the assembly log for errors. Copy the newly generated **`switch_led.hex`** into the `JTAG_Loader` folder. The slides call their example file `testasm.hex`; use `switch_led.hex` for this project.
+Check the assembly log for errors. Copy the newly generated **`switch_led.hex`** into the `JTAG_Loader` folder.
 
 Although assembly also regenerates `switch_led.v`, the file used by the loader is the **HEX file**. Do not start another FPGA build for this firmware-only update once the loader-enabled hardware is already running.
 
@@ -388,12 +388,12 @@ cd /d C:\FPGA\JTAG_Loader
 JTAG_Loader_Win7_64.exe -l switch_led.hex
 ```
 
-The option is a normal hyphen followed by lowercase **L**: `-l`. In this Windows command prompt, `cd /d` changes both the directory and the drive, combining the two navigation commands shown in the slides.
+The option is a normal hyphen followed by lowercase **L**: `-l`. In this Windows command prompt, `cd /d` changes both the directory and the drive.
 
 3. Watch the loader output. It should identify the configured FPGA and PicoBlaze memory, reset PicoBlaze, program the BRAM, release reset, and report successful completion.
 4. Check the LEDs: with the inverted program, OFF switches should light their corresponding LEDs, and ON switches should turn them off.
 
-The screenshot on slide 63 ends with **“JTAG Loader has completed successfully”**. Treat connection errors, memory-size errors or a missing completion message as a failed update.
+Successful loading ends with **“JTAG Loader has completed successfully”**. Treat connection errors, memory-size errors or a missing completion message as a failed update.
 
 ### 13.6 Restore the original program and understand persistence
 
@@ -415,5 +415,5 @@ If the revised firmware should be the default after FPGA configuration, assemble
 | Old behavior remains | Check that the newly assembled HEX file was copied and that loading completed |
 | An FPGA reconfiguration restores the old program | Rebuild the bitstream if you want the new firmware as its initial contents |
 
-This is an optional extension documented from the supplied slides and the vendor ROM interface. The original switch-to-LED design was tested on the board; the JTAG Loader extension has not been built or tested as part of that validation.
+The original switch-to-LED design was tested on the board; the JTAG Loader extension has not been built or tested as part of that validation.
 
