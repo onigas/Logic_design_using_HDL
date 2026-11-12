@@ -4,7 +4,7 @@ Complete RTL sources, board constraints, and Tcl project-generation scripts for
 **Nexys4 DDR / Nexys A7-100T** (`xc7a100tcsg324-1`) and **Vivado 2022.2**.
 
 This package includes **all four exercises** from the original L9 source
-directory, plus **L9.5 RGB332 color control**, **L9.6 melody playback**, and behavioral simulations for
+directory, plus **L9.5 RGB332 color control**, **L9.6 Melody maker**, and behavioral simulations for
 **L9.1 and L9.5**.
 
 | Exercise | Folder | Generated project |
@@ -14,7 +14,7 @@ directory, plus **L9.5 RGB332 color control**, **L9.6 melody playback**, and beh
 | L9.3 Knight Rider LED light | `L9.3_Knight_Rider` | `L9_3_Knight_Rider.xpr` |
 | L9.4 PWM audio sine-wave generator | `L9.4_PWM_Audio` | `L9_4_PWM_Audio.xpr` |
 | L9.5 two RGB LEDs with RGB332 PWM | `L9.5_RGB_PWM` | `L9_5_RGB_PWM.xpr` |
-| L9.6 Boci, boci, tarka melody player | `L9.6_Melody_Player` | `L9_6_Melody_Player.xpr` |
+| L9.6 Melody maker | `L9.6_Melody_Player` | `L9_6_Melody_Player.xpr` |
 
 ## Generate one project in Vivado
 
@@ -75,7 +75,7 @@ See [L9.5 instructions](L9.5_RGB_PWM/README.md) for pin mapping and board tests.
   8-bit counter provides 390.625 kHz PWM, limited to 127/256 (49.609375%) duty.
   SW8/SW9 use LVCMOS18; the other switches and RGB outputs use LVCMOS33.
 
-- L9.6 plays the 24-note melody **Boci, boci, tarka** through J8, using sine-wave
+- L9.6 **Melody maker** plays a 24-note melody through J8 using sine-wave
   PWM. SW0 starts/stops playback, BTNC restarts, and the melody repeats.
   [L9.6 instructions](L9.6_Melody_Player/README.md) include notes and rhythm.
   L9.6 has no simulation files or scripts.
