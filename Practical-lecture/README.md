@@ -16,22 +16,6 @@ Build a small processor-based system in **Vivado 2022.2**. Each of the 16 switch
 
 Use Windows, Vivado 2022.2 with Artix-7 device support, a Nexys4 DDR and a USB data cable. The FPGA part is `xc7a100tcsg324-1`.
 
-Download the lecture folder, or clone the course repository. Work from a writable local folder, for example `C:/FPGA/Practical-lecture`. The examples below use that path; replace it with your actual folder.
-
-| File | Purpose |
-| --- | --- |
-| `rtl/kcpsm6.v` | Original Xilinx processor implementation |
-| `rtl/switch_led_top.v` | Connects the processor, ROM, switches and LEDs |
-| `firmware/switch_led.psm` | Assembly source program |
-| `firmware/kcpsm6.exe` | Xilinx KCPSM6 assembler for Windows |
-| `firmware/ROM_form.v` | 7-series 1K ROM template used by the assembler |
-| `firmware/switch_led.v` | Generated, initialized Verilog program ROM |
-| `firmware/switch_led.hex` | Machine instructions in hexadecimal form |
-| `constraints/nexys4_ddr.xdc` | Board pins and timing constraints |
-| `sim/tb_switch_led.sv` | Automated simulation testbench |
-| `tcl/create_project.tcl` | Creates the Vivado project |
-| `tcl/build_and_test.tcl` | Simulates and builds the bitstream |
-
 Keep the original copyright and license notices in the Xilinx files. They remain subject to their vendor terms.
 
 ## 2 Understand the hardware
