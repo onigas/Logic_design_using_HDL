@@ -1,4 +1,4 @@
-# L9.6 - Melody Player: Boci, boci, tarka
+# L9.6 - Melody maker
 
 Play a complete 24-note melody through the onboard **J8 3.5 mm audio output**.
 Target: **Nexys4 DDR / Nexys A7-100T**, `xc7a100tcsg324-1`, **Vivado 2022.2**.
@@ -16,11 +16,8 @@ has no built-in loudspeaker. Begin with low external volume.
 
 ## Melody and rhythm
 
-The transcription follows [Dalok Online: Boci, boci, tarka](https://dalok.theisz.hu/index.php?id=BociBociTarka&lang=hu&page=song),
-including its [machine-readable score](https://dalok.theisz.hu/songs/BociBociTarka/BociBociTarka.ly).
-The melody is in **C major, 2/4, quarter note = 100 BPM**. Octave notation
-uses middle C = C4. The traditional melody has published variants; this
-version uses F4-A4 at the end of phrase 3.
+The example melody is in **C major, 2/4, quarter note = 100 BPM**. Octave
+notation uses middle C = C4. This version uses F4-A4 at the end of phrase 3.
 
 | Phrase | Notes | Durations in quarter-note beats |
 | --- | --- | --- |
