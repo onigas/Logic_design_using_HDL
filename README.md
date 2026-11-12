@@ -103,7 +103,7 @@ For project variants with maximum grades of **3/5, 4/5, and 5/5**, the rubric ab
 | [L9.3_Knight_Rider](Lab09/L9.3_Knight_Rider/) | Knight Rider LED animation with PWM brightness control |
 | [L9.4_PWM_Audio](Lab09/L9.4_PWM_Audio/) | Sine-wave audio generation using ROM and PWM |
 | [L9.5_RGB_PWM](Lab09/L9.5_RGB_PWM/) | Two independent RGB332 LEDs with shared PWM, limited brightness, and self-checking simulation |
-| [L9.6_Melody_Player](Lab09/L9.6_Melody_Player/) | Boci, boci, tarka melody playback through onboard audio, without simulation |
+| [L9.6_Melody_Player](Lab09/L9.6_Melody_Player/) | Melody maker |
 
 ### Lab 10 — ADXL362 accelerometer interface
 
